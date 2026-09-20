@@ -33,20 +33,21 @@ export default function App() {
       {/* Background Subtle Texture */}
       <div className="fixed inset-0 paper-texture pointer-events-none z-0" />
 
-      {/* Top Header */}
+      {/* Top Header with Increased Gutter Padding */}
       <Header />
 
-      <main className="flex-grow relative z-10">
+      {/* Main Content with Significantly Increased Left/Right Margins & Centered Flow */}
+      <main className="flex-grow relative z-10 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
         {/* 3-Step Process Ribbon */}
         <HowToTrade />
 
-        {/* Page Title & Division Filter Pills */}
+        {/* Page Title & Division Filter Pills (Smaller & Centered) */}
         <DivisionFilter 
           activeFilter={activeFilter} 
           onSelectFilter={handleSelectFilter} 
         />
 
-        {/* 5 Capsule Cards Row */}
+        {/* 5 Capsule Cards Row (Slender & Compact) */}
         <FeaturedSection />
 
         {/* Specials (Agro-Export Showcase) */}
