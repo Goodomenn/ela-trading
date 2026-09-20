@@ -10,6 +10,7 @@ import SubsidiariesSection from './components/SubsidiariesSection';
 import AboutSection from './components/AboutSection';
 import InquirySection from './components/InquirySection';
 import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
 
 export default function App() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -28,7 +29,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative font-sans">
+    <div className="min-h-screen flex flex-col relative font-sans bg-[#FAF5EC] text-[#193238]">
       {/* Background Subtle Texture */}
       <div className="fixed inset-0 paper-texture pointer-events-none z-0" />
 
@@ -55,7 +56,9 @@ export default function App() {
         <ShareablesSection />
 
         {/* Technical Quality Inspector & Chart.js Radar */}
-        <QualityInspector />
+        <ErrorBoundary>
+          <QualityInspector />
+        </ErrorBoundary>
 
         {/* Subsidiary Highlights: Bricks Lounge & Ela Catering */}
         <SubsidiariesSection />

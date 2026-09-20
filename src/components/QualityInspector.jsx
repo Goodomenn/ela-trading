@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Chart, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
+import Chart from 'chart.js/auto';
 import { COMMODITY_DATA } from '../data/commoditiesData';
-
-// Register Chart.js components
-Chart.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 export default function QualityInspector() {
   const [selectedKey, setSelectedKey] = useState('coffee');
@@ -15,77 +12,97 @@ export default function QualityInspector() {
   useEffect(() => {
     if (!chartRef.current || !activeData) return;
 
-    const ctx = chartRef.current.getContext('2d');
-
-    if (chartInstance.current) {
-      chartInstance.current.destroy();
+    // Ensure any existing chart attached to this canvas is destroyed first
+    try {
+      const existing = Chart.getChart(chartRef.current);
+      if (existing) {
+        existing.destroy();
+      }
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+        chartInstance.current = null;
+      }
+    } catch (e) {
+      console.warn('Chart cleanup warning:', e);
     }
 
-    chartInstance.current = new Chart(ctx, {
-      type: 'radar',
-      data: {
-        labels: activeData.labels,
-        datasets: [
-          {
-            label: 'Ela Trading Export Grade',
-            data: activeData.values,
-            backgroundColor: 'rgba(220, 93, 69, 0.25)',
-            borderColor: '#DC5D45',
-            borderWidth: 2,
-            pointBackgroundColor: '#DC5D45',
-            pointBorderColor: '#FAF5EC',
-            pointHoverBackgroundColor: '#FAF5EC',
-            pointHoverBorderColor: '#DC5D45'
-          },
-          {
-            label: 'Standard Market Baseline',
-            data: activeData.baselines,
-            backgroundColor: 'rgba(113, 135, 114, 0.15)',
-            borderColor: '#718772',
-            borderWidth: 1.5,
-            borderDash: [4, 4],
-            pointBackgroundColor: '#718772'
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          r: {
-            angleLines: { color: 'rgba(25, 50, 56, 0.12)' },
-            grid: { color: 'rgba(25, 50, 56, 0.12)' },
-            ticks: { display: false },
-            suggestedMin: 0,
-            suggestedMax: 10,
-            pointLabels: {
-              color: '#193238',
-              font: {
-                family: '"Space Mono", monospace',
-                size: 10
+    const ctx = chartRef.current.getContext('2d');
+    if (!ctx) return;
+
+    try {
+      chartInstance.current = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: activeData.labels,
+          datasets: [
+            {
+              label: 'Ela Trading Export Grade',
+              data: activeData.values,
+              backgroundColor: 'rgba(220, 93, 69, 0.25)',
+              borderColor: '#DC5D45',
+              borderWidth: 2,
+              pointBackgroundColor: '#DC5D45',
+              pointBorderColor: '#FAF5EC',
+              pointHoverBackgroundColor: '#FAF5EC',
+              pointHoverBorderColor: '#DC5D45'
+            },
+            {
+              label: 'Standard Market Baseline',
+              data: activeData.baselines,
+              backgroundColor: 'rgba(113, 135, 114, 0.15)',
+              borderColor: '#718772',
+              borderWidth: 1.5,
+              borderDash: [4, 4],
+              pointBackgroundColor: '#718772'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: { color: 'rgba(25, 50, 56, 0.12)' },
+              grid: { color: 'rgba(25, 50, 56, 0.12)' },
+              ticks: { display: false },
+              suggestedMin: 0,
+              suggestedMax: 10,
+              pointLabels: {
+                color: '#193238',
+                font: {
+                  family: '"Space Mono", monospace',
+                  size: 10
+                }
               }
             }
-          }
-        },
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              boxWidth: 12,
-              color: '#193238',
-              font: {
-                family: '"Courier Prime", monospace',
-                size: 11
+          },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 12,
+                color: '#193238',
+                font: {
+                  family: '"Courier Prime", monospace',
+                  size: 11
+                }
               }
             }
           }
         }
-      }
-    });
+      });
+    } catch (err) {
+      console.error('Failed to initialize radar chart:', err);
+    }
 
     return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
+      try {
+        if (chartInstance.current) {
+          chartInstance.current.destroy();
+          chartInstance.current = null;
+        }
+      } catch (e) {
+        // ignore cleanup error
       }
     };
   }, [activeData]);

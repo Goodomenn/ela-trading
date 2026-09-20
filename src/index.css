@@ -18,17 +18,19 @@
   opacity: 0.04;
 }
 
-/* Stadium / capsule shape for images */
+/* Stadium / capsule shape for images with rich dark slate fallback */
 .capsule-card {
   border-radius: 60px;
   overflow: hidden;
   position: relative;
+  background-color: #193238;
 }
 
 .capsule-card-lg {
   border-radius: 70px;
   overflow: hidden;
   position: relative;
+  background-color: #193238;
 }
 
 /* Chart container */
