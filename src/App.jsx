@@ -1,30 +1,27 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
-import HowToTrade from './components/HowToTrade';
-import DivisionFilter from './components/DivisionFilter';
-import FeaturedSection from './components/FeaturedSection';
-import SpecialsSection from './components/SpecialsSection';
-import ShareablesSection from './components/ShareablesSection';
-import QualityInspector from './components/QualityInspector';
-import SubsidiariesSection from './components/SubsidiariesSection';
-import AboutSection from './components/AboutSection';
-import InquirySection from './components/InquirySection';
 import Footer from './components/Footer';
-import ErrorBoundary from './components/ErrorBoundary';
+import HomePage from './pages/HomePage';
+import SubsidiariesPage from './pages/SubsidiariesPage';
+import QualitySpecsPage from './pages/QualitySpecsPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
-export default function App() {
+function AppContent() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const navigate = useNavigate();
 
   const handleSelectFilter = (filterKey) => {
     setActiveFilter(filterKey);
     if (filterKey === 'export') {
-      document.getElementById('specials')?.scrollIntoView({ behavior: 'smooth' });
+      navigate('/commodities');
     } else if (filterKey === 'hospitality') {
-      document.getElementById('shareables')?.scrollIntoView({ behavior: 'smooth' });
+      navigate('/subsidiaries');
     } else if (filterKey === 'import') {
-      document.getElementById('commodities')?.scrollIntoView({ behavior: 'smooth' });
+      navigate('/commodities');
     } else {
-      document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' });
+      navigate('/');
     }
   };
 
@@ -33,46 +30,47 @@ export default function App() {
       {/* Background Subtle Texture */}
       <div className="fixed inset-0 paper-texture pointer-events-none z-0" />
 
-      {/* Top Header with Increased Gutter Padding */}
+      {/* Top Header (Clean Nav, No Utility Line) */}
       <Header />
 
-      {/* Main Content with Significantly Increased Left/Right Margins & Centered Flow */}
+      {/* Main Content with Generous Margins */}
       <main className="flex-grow relative z-10 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
-        {/* 3-Step Process Ribbon */}
-        <HowToTrade />
-
-        {/* Page Title & Division Filter Pills (Smaller & Centered) */}
-        <DivisionFilter 
-          activeFilter={activeFilter} 
-          onSelectFilter={handleSelectFilter} 
-        />
-
-        {/* 5 Capsule Cards Row (Slender & Compact) */}
-        <FeaturedSection />
-
-        {/* Specials (Agro-Export Showcase) */}
-        <SpecialsSection />
-
-        {/* Shareables (Hospitality Showcase) */}
-        <ShareablesSection />
-
-        {/* Technical Quality Inspector & Chart.js Radar */}
-        <ErrorBoundary>
-          <QualityInspector />
-        </ErrorBoundary>
-
-        {/* Subsidiary Highlights: Bricks Lounge & Ela Catering */}
-        <SubsidiariesSection />
-
-        {/* Company Profile & Certifications */}
-        <AboutSection />
-
-        {/* Inquiry & RFQ Form */}
-        <InquirySection />
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                activeFilter={activeFilter} 
+                onSelectFilter={handleSelectFilter} 
+              />
+            } 
+          />
+          <Route path="/subsidiaries" element={<SubsidiariesPage />} />
+          <Route path="/commodities" element={<QualitySpecsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route 
+            path="*" 
+            element={
+              <HomePage 
+                activeFilter={activeFilter} 
+                onSelectFilter={handleSelectFilter} 
+              />
+            } 
+          />
+        </Routes>
       </main>
 
       {/* Footer */}
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
