@@ -30,10 +30,10 @@ export default function SubsidiariesSection() {
           <div className="pt-3.5 border-t border-cream-300 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div>
               <span className="text-[10px] font-typewriter text-ink-600 block">Official Website</span>
-              <span className="text-[11px] font-mono font-bold text-ink-900">www.brickslounge.com</span>
+              <span className="text-[11px] font-mono font-bold text-ink-900">minnnn.vercel.app</span>
             </div>
             <a 
-              href="https://brickslounge.com" 
+              href="https://minnnn.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="w-full sm:w-auto px-5 py-2 rounded-lg bg-ink-900 text-cream-100 font-display font-bold text-[11px] text-center hover:bg-terracotta-500 transition shadow flex items-center justify-center gap-1.5"

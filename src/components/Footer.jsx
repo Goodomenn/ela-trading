@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -14,13 +15,13 @@ export default function Footer() {
 
           {/* Footer Nav Links */}
           <div className="flex flex-wrap justify-center gap-5 font-mono text-[10.5px] uppercase tracking-wider text-ink-800">
-            <a href="#featured" className="hover:text-terracotta-500 transition">Featured</a>
-            <a href="#specials" className="hover:text-terracotta-500 transition">Specials</a>
-            <a href="#shareables" className="hover:text-terracotta-500 transition">Shareables</a>
-            <a href="https://brickslounge.com" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Bricks Lounge ↗</a>
+            <Link to="/" className="hover:text-terracotta-500 transition">Home</Link>
+            <Link to="/subsidiaries" className="hover:text-terracotta-500 transition">Subsidiaries</Link>
+            <Link to="/commodities" className="hover:text-terracotta-500 transition">Quality Specs</Link>
+            <a href="https://minnnn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Bricks Lounge ↗</a>
             <a href="https://elacatering.com" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Ela Catering ↗</a>
-            <a href="#about" className="hover:text-terracotta-500 transition">About Us</a>
-            <a href="#contact" className="hover:text-terracotta-500 transition">Contact</a>
+            <Link to="/about" className="hover:text-terracotta-500 transition">About Us</Link>
+            <Link to="/contact" className="hover:text-terracotta-500 transition">Contact / RFQ</Link>
           </div>
 
         </div>

@@ -53,7 +53,7 @@ export default function InquirySection() {
                       <span className="text-ink-600 text-[10px]">VIP Table Reservations</span>
                     </div>
                     <a 
-                      href="https://brickslounge.com" 
+                      href="https://minnnn.vercel.app/" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="px-2.5 py-1 border border-ink-800 rounded font-mono text-[9px] font-bold uppercase hover:bg-ink-900 hover:text-cream-100 transition"

@@ -7,7 +7,7 @@ export default function FeaturedSection() {
       title: 'Bricks Lounge',
       subtitle: 'Luxury Nightlife & Fine Dining',
       image: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80',
-      link: 'https://brickslounge.com',
+      link: 'https://minnnn.vercel.app/',
       isComingSoon: false
     },
     {

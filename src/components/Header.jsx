@@ -64,7 +64,7 @@ export default function Header() {
           {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center space-x-2.5">
             <a 
-              href="https://brickslounge.com" 
+              href="https://minnnn.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-ink-900 border border-ink-800 rounded hover:bg-ink-900 hover:text-cream-100 transition shadow-sm"
@@ -103,7 +103,7 @@ export default function Header() {
           <Link to="/about" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">About Us</Link>
           <Link to="/contact" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">Contact / RFQ</Link>
           <div className="pt-2 flex flex-col space-y-2">
-            <a href="https://brickslounge.com" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
+            <a href="https://minnnn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
               Bricks Lounge ↗
             </a>
             <a href="https://elacatering.com" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">

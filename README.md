@@ -9,7 +9,7 @@ A modern web application built with **React**, **Vite**, **Tailwind CSS**, and *
 - **Agro-Commodity Export**: Specialty Arabica Coffee (Yirgacheffe & Sidamo G1), Humera Natural White Sesame Seeds, Tepi Turmeric & Spices, Rift Valley Pulses.
 - **Import & Logistics**: Agricultural machinery, industrial food-grade packaging, fertilizers, multimodal freight forwarding.
 - **Hospitality Subsidiaries**:
-  - [Bricks Lounge](https://brickslounge.com) — Luxury nightlife, mixology & fine dining.
+  - [Bricks Lounge](https://minnnn.vercel.app/) — Luxury nightlife, mixology & fine dining.
   - [Ela Catering Services](https://elacatering.com) — Diplomatic banqueting & institutional catering.
 
 ## 🛠️ Tech Stack
