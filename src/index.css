@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAF5EC;
+    color: #193238;
+    overflow-x: hidden;
+  }
+}
+
+/* Subtle paper texture overlay */
+.paper-texture {
+  background-image: radial-gradient(#193238 0.45px, transparent 0.45px), radial-gradient(#193238 0.45px, #FAF5EC 0.45px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+  opacity: 0.04;
+}
+
+/* Stadium / capsule shape for images */
+.capsule-card {
+  border-radius: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.capsule-card-lg {
+  border-radius: 70px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    height: 340px;
+  }
+}
+
+/* Dotted borders */
+.border-paper-dotted {
+  border-bottom: 2px dotted #D9CDB8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF5EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #DFD2BE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8BAA3;
+}
+
+/* Repeating typography banner */
+.text-stencil-repeat {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
