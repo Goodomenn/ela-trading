@@ -15,7 +15,7 @@ export default function FeaturedSection() {
       title: 'Ela Catering Services',
       subtitle: 'Diplomatic & Institutional Banquets',
       image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80',
-      link: 'https://elacatering.com',
+      link: 'https://ela-catering.vercel.app/',
       isComingSoon: false
     },
     {

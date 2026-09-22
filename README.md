@@ -10,7 +10,7 @@ A modern web application built with **React**, **Vite**, **Tailwind CSS**, and *
 - **Import & Logistics**: Agricultural machinery, industrial food-grade packaging, fertilizers, multimodal freight forwarding.
 - **Hospitality Subsidiaries**:
   - [Bricks Lounge](https://minnnn.vercel.app/) — Luxury nightlife, mixology & fine dining.
-  - [Ela Catering Services](https://elacatering.com) — Diplomatic banqueting & institutional catering.
+  - [Ela Catering Services](https://ela-catering.vercel.app/) — Diplomatic banqueting & institutional catering.
 
 ## 🛠️ Tech Stack
 

@@ -79,7 +79,7 @@ export default function CateringIntroSection() {
           {/* Visit Action Link */}
           <div className="pt-2">
             <a 
-              href="https://elacatering.com" 
+              href="https://ela-catering.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center space-x-2 px-5 py-2 rounded-lg bg-ink-900 text-cream-100 font-display font-bold text-xs uppercase tracking-wider hover:bg-terracotta-500 transition shadow-sm"

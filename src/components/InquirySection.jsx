@@ -67,7 +67,7 @@ export default function InquirySection() {
                       <span className="text-ink-600 text-[10px]">Banqueting &amp; Corporate</span>
                     </div>
                     <a 
-                      href="https://elacatering.com" 
+                      href="https://ela-catering.vercel.app/" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="px-2.5 py-1 border border-ink-800 rounded font-mono text-[9px] font-bold uppercase hover:bg-ink-900 hover:text-cream-100 transition"

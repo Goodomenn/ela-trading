@@ -72,7 +72,7 @@ export default function Header() {
               Bricks Lounge ↗
             </a>
             <a 
-              href="https://elacatering.com" 
+              href="https://ela-catering.vercel.app/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-ink-900 border border-ink-800 rounded hover:bg-ink-900 hover:text-cream-100 transition shadow-sm"
@@ -106,7 +106,7 @@ export default function Header() {
             <a href="https://minnnn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
               Bricks Lounge ↗
             </a>
-            <a href="https://elacatering.com" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
+            <a href="https://ela-catering.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
               Ela Catering ↗
             </a>
           </div>

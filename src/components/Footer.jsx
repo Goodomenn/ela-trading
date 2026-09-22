@@ -19,7 +19,7 @@ export default function Footer() {
             <Link to="/subsidiaries" className="hover:text-terracotta-500 transition">Subsidiaries</Link>
             <Link to="/commodities" className="hover:text-terracotta-500 transition">Quality Specs</Link>
             <a href="https://minnnn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Bricks Lounge ↗</a>
-            <a href="https://elacatering.com" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Ela Catering ↗</a>
+            <a href="https://ela-catering.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Ela Catering ↗</a>
             <Link to="/about" className="hover:text-terracotta-500 transition">About Us</Link>
             <Link to="/contact" className="hover:text-terracotta-500 transition">Contact / RFQ</Link>
           </div>
