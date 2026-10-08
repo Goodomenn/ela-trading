@@ -1,46 +1,48 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        cream: {
-          50: '#FDFBF7',
-          100: '#FAF5EC',
-          200: '#F5EFEB',
-          300: '#ECE3D4',
-          400: '#DFD2BE',
-          500: '#C8BAA3',
-        },
-        terracotta: {
-          400: '#EB755E',
-          500: '#DC5D45',
-          600: '#C04933',
-        },
-        ink: {
-          600: '#34525A',
-          700: '#233F46',
-          800: '#193238',
-          900: '#112226',
-          950: '#0B171A',
-        },
-        sage: {
-          300: '#A6B8A7',
-          400: '#8A9E8B',
-          500: '#718772',
-          600: '#5A6F5B',
-        }
+        // Brick reds
+        "bl-brick":       "#C41E3A",
+        "bl-brick-deep":  "#8B0000",
+        "bl-brick-light": "#E03050",
+        "bl-brick-bg":    "#120303",
+        // Wood browns
+        "bl-wood":        "#2C1008",
+        "bl-wood-mid":    "#5C2E0A",
+        "bl-wood-light":  "#8B4513",
+        "bl-wood-warm":   "#6B3520",
+        // Plaster whites
+        "bl-plaster":     "#F0ECE6",
+        "bl-plaster-mid": "#D8D2C8",
+        "bl-plaster-dark":"#B8B0A6",
+        // Text
+        "bl-cream":       "#F5F0E8",
+        "bl-offwhite":    "#EDE8E0",
+        "bl-muted":       "#A8A09A",
+        "bl-dimmed":      "#6A625C",
+        // Cards / surfaces
+        "bl-surface":     "#1E0808",
+        "bl-card":        "#261010",
+        "bl-elevated":    "#301515",
+        "bl-border":      "rgba(196,30,58,0.2)",
+        "bl-border-wood": "rgba(139,69,19,0.3)",
+        "bl-border-light":"rgba(180,170,160,0.4)",
       },
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
-        mono: ['"Space Mono"', 'monospace'],
-        typewriter: ['"Courier Prime"', 'Courier', 'monospace'],
-        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-      }
+        serif: ["Cormorant Garamond", "Georgia", "serif"],
+        sans:  ["Inter", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        "brick-texture":   "url('/textures/brick.jpg')",
+        "wood-texture":    "url('/textures/wood.jpg')",
+        "plaster-texture": "url('/textures/plaster.png')",
+        "brick-gradient":  "linear-gradient(135deg, #8B0000 0%, #C41E3A 50%, #8B0000 100%)",
+        "wood-gradient":   "linear-gradient(180deg, #2C1008 0%, #5C2E0A 50%, #2C1008 100%)",
+      },
     },
   },
   plugins: [],
-}
+};

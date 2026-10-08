@@ -1,34 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+﻿import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="bg-cream-100 border-t border-cream-300 py-10 text-ink-700 font-typewriter text-xs px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-cream-300 pb-6">
-          
-          {/* Logo & Subtitle */}
-          <div className="text-center md:text-left">
-            <span className="font-display font-black text-lg text-ink-900 block">ELA TRADING PLC</span>
-            <p className="text-ink-600 text-[10.5px] mt-0.5">Connecting East African Agricultural Excellence to Global Markets</p>
-          </div>
+    <footer className="relative"
+      style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover"}}>
+      <div className="absolute inset-0" style={{background:"rgba(6,1,1,0.88)"}}/>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Top accent bar */}
+        <div className="w-full h-0.5 mb-14" style={{background:"linear-gradient(90deg,transparent,#C41E3A,transparent)"}}/>
 
-          {/* Footer Nav Links */}
-          <div className="flex flex-wrap justify-center gap-5 font-mono text-[10.5px] uppercase tracking-wider text-ink-800">
-            <Link to="/" className="hover:text-terracotta-500 transition">Home</Link>
-            <Link to="/subsidiaries" className="hover:text-terracotta-500 transition">Subsidiaries</Link>
-            <Link to="/commodities" className="hover:text-terracotta-500 transition">Quality Specs</Link>
-            <a href="https://minnnn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Bricks Lounge ↗</a>
-            <a href="https://ela-catering.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-terracotta-500 hover:underline">Ela Catering ↗</a>
-            <Link to="/about" className="hover:text-terracotta-500 transition">About Us</Link>
-            <Link to="/contact" className="hover:text-terracotta-500 transition">Contact / RFQ</Link>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          <div className="md:col-span-1">
+            <Link to="/" className="font-serif text-2xl tracking-widest hover:opacity-75 transition-opacity" style={{color:"#fff"}}>
+              BRICKS<span style={{color:"#C41E3A"}}> Lounge</span>
+            </Link>
+            <p className="font-sans text-sm mt-4 leading-relaxed" style={{color:"rgba(255,255,255,0.5)"}}>
+              Miami's Premier Restaurant &amp; VIP Lounge.<br/>Where raw meets refined.
+            </p>
           </div>
-
+          {[
+            { title:"Explore",  links:[["Home","/"],["About Us","/about"],["Menu","/menu"]] },
+            { title:"Reserve",  links:[["Table Reservation","/reservations"],["VIP Service","/reservations"],["Private Events","/contact"]] },
+            { title:"Company",  links:[["About Us","/about"],["Press","/contact"],["Careers","/contact"],["Gift Cards","/contact"]] },
+          ].map(({title,links})=>(
+            <div key={title}>
+              <h5 className="font-sans text-xs tracking-[0.3em] uppercase mb-5 pb-2"
+                style={{color:"rgba(255,255,255,0.35)", borderBottom:"1px solid rgba(196,30,58,0.2)"}}>
+                {title}
+              </h5>
+              <div className="flex flex-col gap-3">
+                {links.map(([l,h])=>(
+                  <Link key={l} to={h} className="font-sans text-sm transition-colors"
+                    style={{color:"rgba(255,255,255,0.5)"}}
+                    onMouseEnter={e=>e.target.style.color="#C41E3A"}
+                    onMouseLeave={e=>e.target.style.color="rgba(255,255,255,0.5)"}>
+                    {l}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="pt-5 flex flex-col sm:flex-row justify-between items-center text-[9.5px] text-ink-500 gap-2">
-          <span>© 2026 Ela Trading PLC. All Rights Reserved.</span>
-          <span>Designed with authentic heritage craft aesthetic</span>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{borderTop:"1px solid rgba(255,255,255,0.08)"}}>
+          <p className="font-sans text-xs" style={{color:"rgba(255,255,255,0.3)"}}>
+            &copy; {year} Bricks Lounge. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            {["Privacy Policy","Terms of Service","Accessibility"].map(l=>(
+              <a key={l} href="#" className="font-sans text-xs" style={{color:"rgba(255,255,255,0.3)"}}>{l}</a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

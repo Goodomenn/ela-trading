@@ -1,44 +1,47 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import SubsidiariesPage from './pages/SubsidiariesPage';
-import QualitySpecsPage from './pages/QualitySpecsPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { useEffect } from "react";
+import Header        from "./components/Header.jsx";
+import Footer        from "./components/Footer.jsx";
+import MobileBottomNav from "./components/MobileBottomNav.jsx";
+import HomePage      from "./pages/HomePage.jsx";
+import MenuPage      from "./pages/MenuPage.jsx";
+import ReservationPage from "./pages/ReservationPage.jsx";
+import AboutPage     from "./pages/AboutPage.jsx";
+import ContactPage   from "./pages/ContactPage.jsx";
 
-function AppContent() {
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
+function Layout() {
   return (
-    <div className="min-h-screen flex flex-col relative font-sans bg-[#FAF5EC] text-[#193238]">
-      {/* Background Subtle Texture */}
-      <div className="fixed inset-0 paper-texture pointer-events-none z-0" />
-
-      {/* Top Header */}
+    <>
+      <ScrollToTop />
       <Header />
-
-      {/* Main Content with Generous Margins */}
-      <main className="flex-grow relative z-10 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
+      <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/subsidiaries" element={<SubsidiariesPage />} />
-          <Route path="/commodities" element={<QualitySpecsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<HomePage />} />
+          <Route path="/"             element={<HomePage />} />
+          <Route path="/menu"         element={<MenuPage />} />
+          <Route path="/reservations" element={<ReservationPage />} />
+          <Route path="/about"        element={<AboutPage />} />
+          <Route path="/contact"      element={<ContactPage />} />
         </Routes>
       </main>
-
-      {/* Footer */}
       <Footer />
-    </div>
+      <MobileBottomNav />
+    </>
   );
 }
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }

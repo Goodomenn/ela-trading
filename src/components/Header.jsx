@@ -1,117 +1,102 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+﻿import { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { label:"Home",         to:"/" },
+  { label:"About",        to:"/about" },
+  { label:"Menu",         to:"/menu" },
+  { label:"Reservations", to:"/reservations" },
+  { label:"Contact",      to:"/contact" },
+];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  useEffect(()=>{
+    const fn=()=>setScrolled(window.scrollY>60);
+    window.addEventListener("scroll",fn); return ()=>window.removeEventListener("scroll",fn);
+  },[]);
 
-  const isActive = (path) => location.pathname === path;
+  const isHome = pathname==="/";
+  const transparent = isHome && !scrolled;
 
   return (
-    <header className="relative z-50 border-b border-cream-300/80 bg-cream-100/95 backdrop-blur-sm px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
-      {/* Main Navigation Bar */}
-      <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center py-4 sm:py-5">
-          
-          {/* Left Nav Links - Linked to dedicated pages */}
-          <nav className="hidden lg:flex items-center space-x-6 text-[11px] font-bold uppercase tracking-wider text-ink-800">
-            <Link 
-              to="/" 
-              className={`transition hover:text-terracotta-500 ${isActive('/') ? 'text-terracotta-500 font-black border-b-2 border-terracotta-500 pb-0.5' : ''}`}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/subsidiaries" 
-              className={`transition hover:text-terracotta-500 ${isActive('/subsidiaries') ? 'text-terracotta-500 font-black border-b-2 border-terracotta-500 pb-0.5' : ''}`}
-            >
-              Subsidiaries
-            </Link>
-            <Link 
-              to="/commodities" 
-              className={`transition hover:text-terracotta-500 ${isActive('/commodities') ? 'text-terracotta-500 font-black border-b-2 border-terracotta-500 pb-0.5' : ''}`}
-            >
-              Quality Specs
-            </Link>
-            <Link 
-              to="/about" 
-              className={`transition hover:text-terracotta-500 ${isActive('/about') ? 'text-terracotta-500 font-black border-b-2 border-terracotta-500 pb-0.5' : ''}`}
-            >
-              About Us
-            </Link>
-            <Link 
-              to="/contact" 
-              className={`transition hover:text-terracotta-500 ${isActive('/contact') ? 'text-terracotta-500 font-black border-b-2 border-terracotta-500 pb-0.5' : ''}`}
-            >
-              Contact / RFQ
-            </Link>
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      transparent
+        ? "bg-transparent"
+        : "backdrop-blur-md shadow-2xl"
+    }`}
+    style={!transparent ? {
+      backgroundImage:"url('/textures/brick.jpg')",
+      backgroundSize:"cover",
+      boxShadow:"0 4px 32px rgba(0,0,0,0.6)"
+    } : {}}>
+      {/* Overlay for non-transparent state */}
+      {!transparent && <div className="absolute inset-0" style={{background:"rgba(8,2,2,0.78)"}}/>}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <Link to="/" className="font-serif text-xl md:text-2xl tracking-widest hover:opacity-80 transition-opacity"
+            style={{color:"#fff"}}>
+            BRICKS<span style={{color:"#C41E3A"}}> Lounge</span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map(l=>(
+              <NavLink key={l.label} to={l.to} end={l.to==="/"}
+                className={({isActive})=>
+                  `text-sm tracking-wider uppercase font-sans transition-colors ${
+                    isActive ? "text-bl-brick" : "hover:text-white"
+                  }`
+                }
+                style={({isActive})=>({color: isActive ? "#C41E3A" : "rgba(255,255,255,0.7)"})}>
+                {l.label}
+              </NavLink>
+            ))}
           </nav>
 
-          {/* Center Brand Logo (Clean, elegant, compact double-line frame) */}
-          <div className="text-center">
-            <Link to="/" className="inline-block group">
-              <div className="border-2 border-ink-800 px-4 py-1 rounded-sm group-hover:border-terracotta-500 transition">
-                <span className="font-display font-black text-xl sm:text-2xl tracking-widest text-ink-900 block leading-tight group-hover:text-terracotta-500 transition">
-                  ELA
-                </span>
-              </div>
-              <span className="block text-[8.5px] font-mono tracking-[0.25em] text-ink-700 mt-1 uppercase">
-                Trading PLC • Global &amp; Ventures
-              </span>
-            </Link>
+          {/* CTAs */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link to="/reservations" className="btn-ghost-white text-xs px-5 py-2.5">Reserve</Link>
+            <Link to="/reservations" className="btn-brick text-xs px-5 py-2.5">Book VIP</Link>
           </div>
 
-          {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center space-x-2.5">
-            <a 
-              href="https://minnnn.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-ink-900 border border-ink-800 rounded hover:bg-ink-900 hover:text-cream-100 transition shadow-sm"
-            >
-              Bricks Lounge ↗
-            </a>
-            <a 
-              href="https://ela-catering.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-ink-900 border border-ink-800 rounded hover:bg-ink-900 hover:text-cream-100 transition shadow-sm"
-            >
-              Ela Catering ↗
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden">
-            <button 
-              onClick={() => setMobileOpen(!mobileOpen)} 
-              aria-label="Toggle Menu" 
-              className="text-ink-900 p-1.5 text-2xl focus:outline-none"
-            >
-              {mobileOpen ? '✕' : '☰'}
-            </button>
-          </div>
+          <button onClick={()=>setOpen(o=>!o)} className="md:hidden p-2" style={{color:"#fff"}} aria-label="Menu">
+            {open ? <X size={24}/> : <Menu size={24}/>}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-cream-200 border-b border-cream-300 px-4 py-3 space-y-2 text-xs font-bold uppercase tracking-wider">
-          <Link to="/" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">Home</Link>
-          <Link to="/subsidiaries" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">Subsidiaries</Link>
-          <Link to="/commodities" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">Quality Specifications</Link>
-          <Link to="/about" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">About Us</Link>
-          <Link to="/contact" onClick={() => setMobileOpen(false)} className="block py-1 text-ink-800 hover:text-terracotta-500">Contact / RFQ</Link>
-          <div className="pt-2 flex flex-col space-y-2">
-            <a href="https://minnnn.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
-              Bricks Lounge ↗
-            </a>
-            <a href="https://ela-catering.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-center py-2 border border-ink-800 rounded text-ink-900 font-bold">
-              Ela Catering ↗
-            </a>
-          </div>
-        </div>
-      )}
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div initial={{opacity:0,y:-8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}}
+            transition={{duration:0.2}}
+            className="md:hidden relative"
+            style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover"}}>
+            <div className="absolute inset-0" style={{background:"rgba(5,0,0,0.88)"}}/>
+            <div className="relative z-10 px-4 py-6 flex flex-col gap-4">
+              {navLinks.map(l=>(
+                <NavLink key={l.label} to={l.to} end={l.to==="/"} onClick={()=>setOpen(false)}
+                  style={({isActive})=>({color: isActive ? "#C41E3A" : "rgba(255,255,255,0.85)"})}
+                  className="text-base tracking-wide uppercase font-sans">
+                  {l.label}
+                </NavLink>
+              ))}
+              <hr style={{borderColor:"rgba(196,30,58,0.3)"}}/>
+              <div className="flex gap-3 pt-2">
+                <Link to="/reservations" onClick={()=>setOpen(false)} className="btn-ghost-white flex-1 text-center py-3">Reserve</Link>
+                <Link to="/reservations" onClick={()=>setOpen(false)} className="btn-brick flex-1 text-center py-3">VIP</Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
