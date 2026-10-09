@@ -52,6 +52,33 @@ export default function ContactPage() {
 
   return (
     <main className="bg-bl-brick-bg text-bl-cream min-h-screen">
+      <Helmet>
+        <title>Contact, Location &amp; Private Events | Bricks Lounge Miami</title>
+        <meta
+          name="description"
+          content="Contact Bricks Lounge on Velvet Boulevard, Miami. Reach our team for table inquiries, private dining buyouts, press inquiries, valet parking info, and directions."
+        />
+        <meta
+          name="keywords"
+          content="contact Bricks Lounge, Miami private events venue, Bricks Lounge address, Velvet Boulevard Miami, venue buyout Miami"
+        />
+        <link rel="canonical" href="https://www.brickslounge.com/contact" />
+        <meta property="og:title" content="Contact, Location &amp; Private Events | Bricks Lounge Miami" />
+        <meta
+          property="og:description"
+          content="Contact Bricks Lounge on Velvet Boulevard, Miami. Reach our team for table inquiries, private dining buyouts, press inquiries, valet parking info, and directions."
+        />
+        <meta property="og:url" content="https://www.brickslounge.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact, Location &amp; Private Events | Bricks Lounge Miami" />
+        <meta
+          name="twitter:description"
+          content="Contact Bricks Lounge on Velvet Boulevard, Miami. Reach our team for table inquiries, private dining buyouts, press inquiries, valet parking info, and directions."
+        />
+        <meta name="twitter:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+      </Helmet>
       {/* ─── HERO ─── */}
       <div className="relative pt-32 pb-16 overflow-hidden border-b border-bl-brick/30">
         <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />

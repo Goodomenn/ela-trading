@@ -27,7 +27,6 @@ function DiningForm() {
   const onSubmit = () => { setSent(true); reset(); setTimeout(() => setSent(false), 5000); };
   return (
     <>
-      <Helmet><title>Reservations & VIP Bottle Service | Bricks Lounge</title><meta name='description' content='Secure your table for fine dining or book an exclusive VIP bottle service booth at Bricks Lounge in Miami.'/><link rel='canonical' href='https://www.brickslounge.com/reservations'/></Helmet>
       <AnimatePresence>{sent && <Toast msg="Reservation confirmed! Check your email." />}</AnimatePresence>
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -74,7 +73,6 @@ function VIPForm() {
   const onSubmit = () => { setSent(true); reset(); setTimeout(() => setSent(false), 5000); };
   return (
     <>
-      <Helmet><title>Reservations & VIP Bottle Service | Bricks Lounge</title><meta name='description' content='Secure your table for fine dining or book an exclusive VIP bottle service booth at Bricks Lounge in Miami.'/><link rel='canonical' href='https://www.brickslounge.com/reservations'/></Helmet>
       <AnimatePresence>{sent && <Toast msg="VIP request received! Our concierge will contact you within 2 hours." />}</AnimatePresence>
       <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -130,7 +128,33 @@ export default function ReservationPage() {
   const [activeTab, setActiveTab] = useState("dining");
   return (
     <>
-      <Helmet><title>Reservations & VIP Bottle Service | Bricks Lounge</title><meta name='description' content='Secure your table for fine dining or book an exclusive VIP bottle service booth at Bricks Lounge in Miami.'/><link rel='canonical' href='https://www.brickslounge.com/reservations'/></Helmet>
+      <Helmet>
+        <title>Reservations &amp; VIP Bottle Service | Bricks Lounge Miami</title>
+        <meta
+          name="description"
+          content="Reserve your dining table or secure exclusive VIP bottle service booths at Bricks Lounge Miami. Direct booking with no third-party booking fees."
+        />
+        <meta
+          name="keywords"
+          content="Bricks Lounge reservations, table booking Miami, VIP bottle service Miami, fine dining reservations Miami"
+        />
+        <link rel="canonical" href="https://www.brickslounge.com/reservations" />
+        <meta property="og:title" content="Reservations &amp; VIP Bottle Service | Bricks Lounge Miami" />
+        <meta
+          property="og:description"
+          content="Reserve your dining table or secure exclusive VIP bottle service booths at Bricks Lounge Miami. Direct booking with no third-party booking fees."
+        />
+        <meta property="og:url" content="https://www.brickslounge.com/reservations" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Reservations &amp; VIP Bottle Service | Bricks Lounge Miami" />
+        <meta
+          name="twitter:description"
+          content="Reserve your dining table or secure exclusive VIP bottle service booths at Bricks Lounge Miami. Direct booking with no third-party booking fees."
+        />
+        <meta name="twitter:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+      </Helmet>
       {/* Hero */}
       <div className="relative pt-32 pb-16 overflow-hidden border-b border-bl-brick/30">
         <div className="absolute inset-0" style={{ backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundPosition:"center" }}/>

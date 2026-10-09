@@ -32,6 +32,33 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
 export default function AboutPage() {
   return (
     <main className="bg-bl-brick-bg text-bl-cream min-h-screen">
+      <Helmet>
+        <title>Our Story &amp; Philosophy | Bricks Lounge Miami</title>
+        <meta
+          name="description"
+          content="Discover the journey behind Bricks Lounge Miami. Led by Executive Chef Marco Bellini, experience our passion for farm-to-table cuisine and world-class hospitality."
+        />
+        <meta
+          name="keywords"
+          content="about Bricks Lounge, Marco Bellini chef, Miami upscale dining story, James Beard semifinalist Miami, Bricks Lounge history"
+        />
+        <link rel="canonical" href="https://www.brickslounge.com/about" />
+        <meta property="og:title" content="Our Story &amp; Philosophy | Bricks Lounge Miami" />
+        <meta
+          property="og:description"
+          content="Discover the journey behind Bricks Lounge Miami. Led by Executive Chef Marco Bellini, experience our passion for farm-to-table cuisine and world-class hospitality."
+        />
+        <meta property="og:url" content="https://www.brickslounge.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Story &amp; Philosophy | Bricks Lounge Miami" />
+        <meta
+          name="twitter:description"
+          content="Discover the journey behind Bricks Lounge Miami. Led by Executive Chef Marco Bellini, experience our passion for farm-to-table cuisine and world-class hospitality."
+        />
+        <meta name="twitter:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+      </Helmet>
       {/* ─── HERO ─── */}
       <div className="relative pt-32 pb-16 overflow-hidden border-b border-bl-brick/30">
         <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />

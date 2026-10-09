@@ -1,4 +1,4 @@
-﻿import { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CalendarCheck, Star, ChevronDown } from "lucide-react";
@@ -54,12 +54,14 @@ export default function Hero() {
           className="font-serif leading-none mb-2"
           style={{fontSize:"clamp(4rem,12vw,9rem)", color:"#fff", textShadow:"0 4px 32px rgba(0,0,0,0.5)"}}>
           BRICKS
+          <span className="sr-only"> Lounge - Fine Dining &amp; VIP Lounge Miami</span>
         </motion.h1>
-        <motion.h2 initial={{opacity:0,scale:0.94}} animate={{opacity:1,scale:1}} transition={{delay:0.6,duration:0.8}}
+        <motion.div initial={{opacity:0,scale:0.94}} animate={{opacity:1,scale:1}} transition={{delay:0.6,duration:0.8}}
           className="font-serif italic leading-none mb-8"
+          aria-hidden="true"
           style={{fontSize:"clamp(2.5rem,8vw,6rem)", color:"#C41E3A", textShadow:"0 4px 32px rgba(196,30,58,0.4)"}}>
           Lounge
-        </motion.h2>
+        </motion.div>
 
         {/* Thin white line separator */}
         <motion.div initial={{scaleX:0}} animate={{scaleX:1}} transition={{delay:0.9, duration:0.6}}

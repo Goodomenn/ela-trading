@@ -61,6 +61,33 @@ export default function MenuPage() {
 
   return (
     <main className="bg-bl-brick-bg text-bl-cream min-h-screen">
+      <Helmet>
+        <title>Culinary &amp; Cocktail Menu | Bricks Lounge Miami</title>
+        <meta
+          name="description"
+          content="Explore the exquisite dining and beverage offerings at Bricks Lounge Miami. Dry-aged steaks, fresh seafood, artisan desserts, prestige wines, and craft cocktails."
+        />
+        <meta
+          name="keywords"
+          content="Bricks Lounge menu, Miami restaurant menu, dry aged steak Miami, craft cocktails Miami, fine dining menu"
+        />
+        <link rel="canonical" href="https://www.brickslounge.com/menu" />
+        <meta property="og:title" content="Culinary &amp; Cocktail Menu | Bricks Lounge Miami" />
+        <meta
+          property="og:description"
+          content="Dry-aged steaks, fresh seafood, artisan desserts, and bespoke cocktails crafted with passion at Bricks Lounge."
+        />
+        <meta property="og:url" content="https://www.brickslounge.com/menu" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Culinary &amp; Cocktail Menu | Bricks Lounge Miami" />
+        <meta
+          name="twitter:description"
+          content="Dry-aged steaks, fresh seafood, artisan desserts, and bespoke cocktails crafted with passion at Bricks Lounge."
+        />
+        <meta name="twitter:image" content="https://www.brickslounge.com/textures/brick.jpg" />
+      </Helmet>
       {/* ─── HERO ─── */}
       <div className="relative pt-32 pb-16 overflow-hidden border-b border-bl-brick/30">
         <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
