@@ -34,12 +34,12 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Full-bleed brick background */}
+      {/* Full-bleed stone background */}
       <div className="absolute inset-0"
         style={{ backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundPosition:"center" }} />
-      {/* Layered vignette gradient overlay - deep warm lounge mood allowing brick texture to glow through */}
+      {/* Layered vignette gradient overlay - dark slate & warm amber atmosphere letting the stone texture shine through */}
       <div className="absolute inset-0"
-        style={{ background:"linear-gradient(160deg, rgba(8,2,2,0.80) 0%, rgba(45,8,8,0.60) 50%, rgba(8,2,2,0.85) 100%)" }} />
+        style={{ background:"linear-gradient(160deg, rgba(8,10,14,0.78) 0%, rgba(18,20,24,0.52) 50%, rgba(8,10,14,0.84) 100%)" }} />
       {/* Golden particle embers */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
 

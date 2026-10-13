@@ -35,7 +35,7 @@ export default function Header() {
       boxShadow:"0 4px 32px rgba(0,0,0,0.75)"
     } : {}}>
       {/* Overlay for non-transparent state */}
-      {!transparent && <div className="absolute inset-0" style={{background:"rgba(10,2,2,0.85)"}}/>}
+      {!transparent && <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.88)"}}/>}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -101,7 +101,7 @@ export default function Header() {
             transition={{duration:0.2}}
             className="md:hidden relative"
             style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover"}}>
-            <div className="absolute inset-0" style={{background:"rgba(8,1,1,0.92)"}}/>
+            <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.95)"}}/>
             <div className="relative z-10 px-4 py-6 flex flex-col gap-4">
               {navLinks.map(l=>(
                 <NavLink key={l.label} to={l.to} end={l.to==="/"} onClick={()=>setOpen(false)}

@@ -11,7 +11,7 @@ export default function ReviewsSection() {
   return (
     <section id="reviews" className="relative py-24"
       style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundAttachment:"fixed"}}>
-      <div className="absolute inset-0" style={{background:"rgba(10,2,2,0.80)"}}/>
+      <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.84)"}}/>
       <div className="relative z-10 section-inner">
         <div className="text-center mb-14">
           <span className="section-label-light">Guest Reviews</span>

@@ -13,7 +13,7 @@ export default function MobileBottomNav() {
     <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 backdrop-blur-lg"
       style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", paddingBottom:"env(safe-area-inset-bottom)"}}
       aria-label="Mobile navigation">
-      <div className="absolute inset-0" style={{background:"rgba(8,1,1,0.94)"}}/>
+      <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.95)"}}/>
       <div style={{position:"relative", borderTop:"1px solid rgba(229,195,120,0.25)", display:"flex"}}>
         {items.map(({icon:Icon,label,to,vip})=>(
           <NavLink key={label} to={to}

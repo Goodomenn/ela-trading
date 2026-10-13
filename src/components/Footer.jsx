@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="relative"
       style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover"}}>
-      <div className="absolute inset-0" style={{background:"rgba(8,1,1,0.92)"}}/>
+      <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.94)"}}/>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Top accent bar */}
         <div className="w-full h-[1.5px] mb-14" style={{background:"linear-gradient(90deg,transparent,rgba(229,195,120,0.7),transparent)"}}/>

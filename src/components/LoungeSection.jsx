@@ -19,7 +19,7 @@ export default function LoungeSection() {
   return (
     <section id="lounge" className="relative py-24"
       style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundAttachment:"fixed"}}>
-      <div className="absolute inset-0" style={{background:"rgba(10,2,2,0.78)"}}/>
+      <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.82)"}}/>
       <div className="relative z-10 section-inner">
         {/* Header */}
         <div className="text-center mb-14">
