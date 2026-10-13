@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Star, Shield, Music, Sparkles, AlertTriangle } from "lucide-react";
 
@@ -19,16 +19,16 @@ export default function LoungeSection() {
   return (
     <section id="lounge" className="relative py-24"
       style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundAttachment:"fixed"}}>
-      <div className="absolute inset-0" style={{background:"rgba(8,2,2,0.72)"}}/>
+      <div className="absolute inset-0" style={{background:"rgba(10,2,2,0.78)"}}/>
       <div className="relative z-10 section-inner">
         {/* Header */}
         <div className="text-center mb-14">
           <span className="section-label-light">VIP Lounge</span>
           <div className="divider-white mx-auto"/>
-          <h2 className="font-serif text-4xl md:text-5xl" style={{color:"#fff"}}>
-            The <em style={{color:"#C41E3A"}}>After-Dark</em> Experience
+          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide" style={{color:"#FAF6EE"}}>
+            The <span className="font-script text-5xl md:text-6xl font-normal italic" style={{color:"#E5C378", textShadow:"0 0 16px rgba(229,195,120,0.35)"}}>After-Dark</span> Experience
           </h2>
-          <p className="font-sans text-sm mt-4 max-w-xl mx-auto leading-relaxed" style={{color:"rgba(255,255,255,0.65)"}}>
+          <p className="font-sans text-sm mt-4 max-w-xl mx-auto leading-relaxed" style={{color:"rgba(250,246,238,0.75)"}}>
             After 10 PM, Bricks Lounge transforms into Miami's most sought-after VIP destination.
           </p>
         </div>
@@ -40,11 +40,12 @@ export default function LoungeSection() {
               whileInView={{opacity:1,y:0}} initial={{opacity:0,y:20}}
               viewport={{once:true}} transition={{delay:i*0.1}}
               className="card-on-brick p-6 text-center transition-all duration-300">
-              <div className="w-10 h-10 flex items-center justify-center mx-auto mb-4" style={{border:"1px solid rgba(196,30,58,0.4)", color:"#C41E3A"}}>
+              <div className="w-10 h-10 flex items-center justify-center mx-auto mb-4 rounded-full"
+                style={{border:"1px solid rgba(229,195,120,0.35)", color:"#E5C378", background:"rgba(229,195,120,0.08)"}}>
                 <p.icon size={18}/>
               </div>
-              <h4 className="font-serif text-base mb-2" style={{color:"#fff"}}>{p.title}</h4>
-              <p className="font-sans text-xs leading-relaxed" style={{color:"rgba(255,255,255,0.55)"}}>{p.desc}</p>
+              <h4 className="font-display font-semibold text-base mb-2 tracking-wide" style={{color:"#FAF6EE"}}>{p.title}</h4>
+              <p className="font-sans text-xs leading-relaxed" style={{color:"rgba(250,246,238,0.60)"}}>{p.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -57,38 +58,45 @@ export default function LoungeSection() {
               viewport={{once:true}} transition={{delay:i*0.12}}
               className={`p-8 text-center transition-all duration-300 ${pkg.highlight ? "scale-105" : ""}`}
               style={{
-                background: pkg.highlight ? "#C41E3A" : "rgba(10,2,2,0.6)",
-                border: pkg.highlight ? "2px solid #C41E3A" : "1px solid rgba(255,255,255,0.15)",
+                background: pkg.highlight ? "linear-gradient(135deg, #991428 0%, #750A19 100%)" : "rgba(12,2,2,0.65)",
+                border: pkg.highlight ? "1.5px solid #E5C378" : "1px solid rgba(229,195,120,0.20)",
+                boxShadow: pkg.highlight ? "0 10px 35px rgba(0,0,0,0.6), 0 0 25px rgba(229,195,120,0.25)" : "0 6px 20px rgba(0,0,0,0.4)",
                 backdropFilter:"blur(8px)"
               }}>
-              {pkg.highlight && <span className="block text-xs tracking-widest uppercase font-sans mb-3" style={{color:"rgba(255,255,255,0.7)"}}>Most Popular</span>}
-              <h3 className="font-serif text-2xl mb-1" style={{color:"#fff"}}>{pkg.name}</h3>
-              <p className="font-serif text-4xl mb-4" style={{color: pkg.highlight ? "#fff" : "#C41E3A"}}>
-                {pkg.price}<span className="text-lg font-sans"> min</span>
+              {pkg.highlight && (
+                <span className="inline-block text-xs tracking-[0.25em] uppercase font-sans mb-3 px-3 py-1 rounded-full bg-black/30 border border-[#E5C378]/40"
+                  style={{color:"#E5C378"}}>
+                  Most Popular
+                </span>
+              )}
+              <h3 className="font-display font-bold text-2xl mb-1 tracking-wide" style={{color:"#FAF6EE"}}>{pkg.name}</h3>
+              <p className="font-serif text-4xl mb-4 font-semibold" style={{color:"#E5C378"}}>
+                {pkg.price}<span className="text-lg font-sans font-normal text-[#FAF6EE]/70"> min</span>
               </p>
-              <p className="font-sans text-xs leading-relaxed mb-6" style={{color: pkg.highlight ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.55)"}}>
+              <p className="font-sans text-xs leading-relaxed mb-6" style={{color:"rgba(250,246,238,0.70)"}}>
                 {pkg.desc}
               </p>
               <Link to="/reservations"
-                className="font-sans text-xs tracking-widest uppercase transition-all"
+                className="font-sans text-xs tracking-widest uppercase transition-all duration-200"
                 style={{
-                  display:"inline-block", padding:"8px 24px",
-                  border: pkg.highlight ? "1.5px solid rgba(255,255,255,0.7)" : "1.5px solid #C41E3A",
-                  color: pkg.highlight ? "#fff" : "#C41E3A"
-                }}>
-                Book This
+                  display:"inline-block", padding:"10px 28px",
+                  border:"1.5px solid rgba(229,195,120,0.50)",
+                  background: pkg.highlight ? "rgba(229,195,120,0.18)" : "rgba(0,0,0,0.30)",
+                  color: "#FAF6EE"
+                }}
+                onMouseEnter={e=>e.currentTarget.style.borderColor="#E5C378"}
+                onMouseLeave={e=>e.currentTarget.style.borderColor="rgba(229,195,120,0.50)"}>
+                Book Package →
               </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Dress code */}
-        <div className="flex items-start gap-4 p-5" style={{border:"1px solid rgba(255,255,255,0.12)", background:"rgba(0,0,0,0.4)"}}>
-          <AlertTriangle size={18} style={{color:"#C41E3A", flexShrink:0, marginTop:2}}/>
-          <p className="font-sans text-sm leading-relaxed" style={{color:"rgba(255,255,255,0.65)"}}>
-            <span style={{color:"#fff", fontWeight:600}}>Dress Code: </span>
-            Smart-casual upscale for the VIP lounge (10 PM+). No athletic wear, shorts, or open-toed shoes for gentlemen.
-          </p>
+        {/* Fine print */}
+        <div className="flex items-center justify-center gap-2 text-xs font-sans text-center"
+          style={{color:"rgba(250,246,238,0.50)"}}>
+          <AlertTriangle size={13} style={{color:"#E5C378"}}/>
+          <span>21+ only after 10 PM · Strict upscale dress code strictly enforced</span>
         </div>
       </div>
     </section>

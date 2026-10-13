@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const reviews = [
@@ -11,16 +11,20 @@ export default function ReviewsSection() {
   return (
     <section id="reviews" className="relative py-24"
       style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundAttachment:"fixed"}}>
-      <div className="absolute inset-0" style={{background:"rgba(8,2,2,0.75)"}}/>
+      <div className="absolute inset-0" style={{background:"rgba(10,2,2,0.80)"}}/>
       <div className="relative z-10 section-inner">
         <div className="text-center mb-14">
           <span className="section-label-light">Guest Reviews</span>
           <div className="divider-white mx-auto"/>
-          <div className="flex justify-center gap-1 mb-3">
-            {[...Array(5)].map((_,i)=><Star key={i} size={22} style={{color:"#C41E3A"}} fill="#C41E3A"/>)}
+          <div className="flex justify-center gap-1.5 mb-3">
+            {[...Array(5)].map((_,i)=><Star key={i} size={22} style={{color:"#E5C378"}} fill="#E5C378"/>)}
           </div>
-          <p className="font-serif text-5xl" style={{color:"#fff"}}>4.8<span style={{color:"#C41E3A",fontSize:"2rem"}}>/5</span></p>
-          <p className="font-sans text-xs tracking-widest uppercase mt-2" style={{color:"rgba(255,255,255,0.45)"}}>Based on 800+ verified reviews</p>
+          <p className="font-display font-bold text-5xl" style={{color:"#FAF6EE"}}>
+            4.8<span style={{color:"#E5C378",fontSize:"2.2rem",marginLeft:"4px"}}>/5</span>
+          </p>
+          <p className="font-sans text-xs tracking-[0.25em] uppercase mt-2" style={{color:"rgba(250,246,238,0.55)"}}>
+            Based on 800+ verified guest experiences
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((r,i)=>(
@@ -29,18 +33,18 @@ export default function ReviewsSection() {
               viewport={{once:true}} transition={{delay:i*0.12}}
               className="card-on-brick p-7 transition-all duration-300">
               <div className="flex gap-1 mb-4">
-                {[...Array(r.rating)].map((_,j)=><Star key={j} size={14} style={{color:"#C41E3A"}} fill="#C41E3A"/>)}
+                {[...Array(r.rating)].map((_,j)=><Star key={j} size={14} style={{color:"#E5C378"}} fill="#E5C378"/>)}
               </div>
-              <p className="font-sans text-sm leading-relaxed mb-6 italic" style={{color:"rgba(255,255,255,0.72)"}}>
+              <p className="font-serif text-base leading-relaxed mb-6 italic" style={{color:"rgba(250,246,238,0.85)"}}>
                 "{r.text}"
               </p>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between pt-4 border-t border-bl-gold/15">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-semibold font-sans"
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-[#FAF6EE] text-xs font-semibold font-sans border border-[#E5C378]/30"
                     style={{backgroundColor:r.color}}>{r.init}</div>
-                  <span className="font-sans text-sm" style={{color:"#fff"}}>{r.name}</span>
+                  <span className="font-sans text-sm font-medium" style={{color:"#FAF6EE"}}>{r.name}</span>
                 </div>
-                <span className="font-sans text-xs" style={{color:"rgba(255,255,255,0.4)"}}>{r.source}</span>
+                <span className="font-sans text-xs tracking-wider" style={{color:"#E5C378"}}>{r.source}</span>
               </div>
             </motion.div>
           ))}

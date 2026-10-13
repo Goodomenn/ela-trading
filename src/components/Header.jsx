@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -32,17 +32,26 @@ export default function Header() {
     style={!transparent ? {
       backgroundImage:"url('/textures/brick.jpg')",
       backgroundSize:"cover",
-      boxShadow:"0 4px 32px rgba(0,0,0,0.6)"
+      boxShadow:"0 4px 32px rgba(0,0,0,0.75)"
     } : {}}>
       {/* Overlay for non-transparent state */}
-      {!transparent && <div className="absolute inset-0" style={{background:"rgba(8,2,2,0.78)"}}/>}
+      {!transparent && <div className="absolute inset-0" style={{background:"rgba(10,2,2,0.85)"}}/>}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="font-serif text-xl md:text-2xl tracking-widest hover:opacity-80 transition-opacity"
-            style={{color:"#fff"}}>
-            BRICKS<span style={{color:"#C41E3A"}}> Lounge</span>
+          <Link to="/" className="flex items-baseline gap-1.5 hover:opacity-90 transition-opacity group">
+            <span className="font-display text-xl md:text-2xl font-bold tracking-[0.2em]"
+              style={{color:"#FAF6EE", textShadow:"0 2px 14px rgba(0,0,0,0.8)"}}>
+              BRICKS
+            </span>
+            <span className="font-script text-2xl md:text-3xl italic"
+              style={{
+                color:"#E5C378",
+                textShadow:"0 2px 14px rgba(0,0,0,0.8), 0 0 16px rgba(229,195,120,0.4)"
+              }}>
+              Lounge
+            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -50,12 +59,25 @@ export default function Header() {
             {navLinks.map(l=>(
               <NavLink key={l.label} to={l.to} end={l.to==="/"}
                 className={({isActive})=>
-                  `text-sm tracking-wider uppercase font-sans transition-colors ${
-                    isActive ? "text-bl-brick" : "hover:text-white"
+                  `relative text-xs tracking-[0.25em] uppercase font-sans font-medium transition-all duration-200 py-1 ${
+                    isActive ? "text-bl-gold" : "text-[#FAF6EE]/75 hover:text-[#FAF6EE]"
                   }`
                 }
-                style={({isActive})=>({color: isActive ? "#C41E3A" : "rgba(255,255,255,0.7)"})}>
-                {l.label}
+                style={({isActive})=>({
+                  color: isActive ? "#E5C378" : "rgba(250,246,238,0.75)",
+                  textShadow: isActive ? "0 0 14px rgba(229,195,120,0.4)" : "none"
+                })}>
+                {({isActive})=>(
+                  <>
+                    {l.label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeNavIndicator"
+                        className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#E5C378] to-transparent"
+                      />
+                    )}
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>
@@ -66,7 +88,7 @@ export default function Header() {
             <Link to="/reservations" className="btn-brick text-xs px-5 py-2.5">Book VIP</Link>
           </div>
 
-          <button onClick={()=>setOpen(o=>!o)} className="md:hidden p-2" style={{color:"#fff"}} aria-label="Menu">
+          <button onClick={()=>setOpen(o=>!o)} className="md:hidden p-2 text-[#FAF6EE]" aria-label="Menu">
             {open ? <X size={24}/> : <Menu size={24}/>}
           </button>
         </div>
@@ -79,16 +101,16 @@ export default function Header() {
             transition={{duration:0.2}}
             className="md:hidden relative"
             style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover"}}>
-            <div className="absolute inset-0" style={{background:"rgba(5,0,0,0.88)"}}/>
+            <div className="absolute inset-0" style={{background:"rgba(8,1,1,0.92)"}}/>
             <div className="relative z-10 px-4 py-6 flex flex-col gap-4">
               {navLinks.map(l=>(
                 <NavLink key={l.label} to={l.to} end={l.to==="/"} onClick={()=>setOpen(false)}
-                  style={({isActive})=>({color: isActive ? "#C41E3A" : "rgba(255,255,255,0.85)"})}
-                  className="text-base tracking-wide uppercase font-sans">
+                  style={({isActive})=>({color: isActive ? "#E5C378" : "rgba(250,246,238,0.85)"})}
+                  className="text-sm tracking-[0.2em] uppercase font-sans py-1">
                   {l.label}
                 </NavLink>
               ))}
-              <hr style={{borderColor:"rgba(196,30,58,0.3)"}}/>
+              <hr style={{borderColor:"rgba(229,195,120,0.25)"}}/>
               <div className="flex gap-3 pt-2">
                 <Link to="/reservations" onClick={()=>setOpen(false)} className="btn-ghost-white flex-1 text-center py-3">Reserve</Link>
                 <Link to="/reservations" onClick={()=>setOpen(false)} className="btn-brick flex-1 text-center py-3">VIP</Link>
