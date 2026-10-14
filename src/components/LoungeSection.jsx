@@ -71,35 +71,62 @@ export default function LoungeSection() {
             <motion.div key={i}
               whileInView={{opacity:1,scale:1}} initial={{opacity:0,scale:0.97}}
               viewport={{once:true}} transition={{delay:i*0.12}}
-              className={`p-8 text-center transition-all duration-300 rounded-sm ${pkg.highlight ? "scale-105 shadow-2xl shadow-black/40" : "shadow-xl shadow-black/25"}`}
+              className={`p-8 text-center transition-all duration-300 rounded-sm relative overflow-hidden group hover:-translate-y-1 ${
+                pkg.highlight
+                  ? "scale-105 shadow-2xl shadow-black/60"
+                  : "shadow-2xl shadow-black/50"
+              }`}
               style={{
-                background: pkg.highlight ? "linear-gradient(135deg, #991428 0%, #750A19 100%)" : "rgba(18,5,5,0.92)",
-                border: pkg.highlight ? "2px solid #E5C378" : "1.5px solid rgba(229,195,120,0.35)",
-                backdropFilter:"blur(8px)"
+                backgroundImage: "url('/textures/cream-plaster.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                border: pkg.highlight
+                  ? "2px solid #E5C378"
+                  : "1.5px solid rgba(229,195,120,0.60)",
+                boxShadow: pkg.highlight
+                  ? "0 15px 40px rgba(0,0,0,0.6), 0 0 25px rgba(229,195,120,0.25)"
+                  : "0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(229,195,120,0.10)"
               }}>
               {pkg.highlight && (
-                <span className="inline-block text-xs tracking-[0.25em] uppercase font-sans mb-3 px-3.5 py-1 rounded-full bg-black/35 border border-[#E5C378]/50"
-                  style={{color:"#E5C378"}}>
+                <span className="inline-block text-xs tracking-[0.25em] uppercase font-sans font-semibold mb-3 px-4 py-1 rounded-full bg-[#8B0000] text-[#FAF6EE] border border-[#E5C378]/60 shadow-md">
                   Most Popular
                 </span>
               )}
-              <h3 className="font-display font-bold text-2xl mb-1 tracking-wide" style={{color:"#FAF6EE"}}>{pkg.name}</h3>
-              <p className="font-serif text-4xl mb-4 font-semibold" style={{color:"#E5C378"}}>
-                {pkg.price}<span className="text-lg font-sans font-normal text-[#FAF6EE]/70"> min</span>
+              <h3 className={`font-display font-bold text-2xl mb-1 tracking-wider ${pkg.highlight ? "text-[#8B0000]" : "text-[#1a0505]"}`}>
+                {pkg.name}
+              </h3>
+              <p className="font-serif text-4xl mb-4 font-bold text-[#8E6E28]">
+                {pkg.price}<span className="text-lg font-sans font-normal text-[#5C4A42]"> min</span>
               </p>
-              <p className="font-sans text-xs leading-relaxed mb-6" style={{color:"rgba(250,246,238,0.75)"}}>
+              <p className="font-sans text-xs leading-relaxed mb-6 text-[#4A3B34] font-medium">
                 {pkg.desc}
               </p>
               <Link to="/reservations"
                 className="font-sans text-xs tracking-widest uppercase transition-all duration-200"
                 style={{
-                  display:"inline-block", padding:"10px 28px",
-                  border:"1.5px solid rgba(229,195,120,0.50)",
-                  background: pkg.highlight ? "rgba(229,195,120,0.18)" : "rgba(0,0,0,0.35)",
-                  color: "#FAF6EE"
+                  display: "inline-block",
+                  padding: "10px 28px",
+                  border: pkg.highlight
+                    ? "1.5px solid rgba(229,195,120,0.60)"
+                    : "1.5px solid #8E6E28",
+                  background: pkg.highlight
+                    ? "linear-gradient(135deg, #991428 0%, #750A19 100%)"
+                    : "rgba(197,160,89,0.15)",
+                  color: pkg.highlight ? "#FAF6EE" : "#1a0505",
+                  boxShadow: pkg.highlight ? "0 4px 16px rgba(117,10,25,0.4)" : "none"
                 }}
-                onMouseEnter={e=>e.currentTarget.style.borderColor="#E5C378"}
-                onMouseLeave={e=>e.currentTarget.style.borderColor="rgba(229,195,120,0.50)"}>
+                onMouseEnter={e => {
+                  if (!pkg.highlight) {
+                    e.currentTarget.style.background = "rgba(197,160,89,0.30)";
+                    e.currentTarget.style.borderColor = "#C5A059";
+                  }
+                }}
+                onMouseLeave={e => {
+                  if (!pkg.highlight) {
+                    e.currentTarget.style.background = "rgba(197,160,89,0.15)";
+                    e.currentTarget.style.borderColor = "#8E6E28";
+                  }
+                }}>
                 Book Package →
               </Link>
             </motion.div>
