@@ -4,7 +4,6 @@ import ExperienceStrip from "../components/ExperienceStrip.jsx";
 import DiningSection from "../components/DiningSection.jsx";
 import LoungeSection from "../components/LoungeSection.jsx";
 import EventsSection from "../components/EventsSection.jsx";
-import ReviewsSection from "../components/ReviewsSection.jsx";
 
 export default function HomePage() {
   return (
@@ -45,7 +44,6 @@ export default function HomePage() {
       <DiningSection />
       <LoungeSection />
       <EventsSection />
-      <ReviewsSection />
     </>
   );
 }
