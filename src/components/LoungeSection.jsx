@@ -17,18 +17,22 @@ const packages = [
 
 export default function LoungeSection() {
   return (
-    <section id="lounge" className="relative py-24"
-      style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundAttachment:"fixed"}}>
-      <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.82)"}}/>
+    <section id="lounge" className="relative py-24 border-y border-bl-gold/20"
+      style={{backgroundImage:"url('/textures/cream-plaster.png')", backgroundSize:"cover"}}>
+      {/* Light warm stucco/plaster overlay */}
+      <div className="absolute inset-0" style={{background:"rgba(247,242,231,0.78)"}}/>
+
       <div className="relative z-10 section-inner">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="section-label-light">VIP Lounge</span>
-          <div className="divider-white mx-auto"/>
-          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide" style={{color:"#FAF6EE"}}>
-            The <span className="font-script text-5xl md:text-6xl font-normal italic" style={{color:"#E5C378", textShadow:"0 0 16px rgba(229,195,120,0.35)"}}>After-Dark</span> Experience
+          <span className="font-sans text-xs tracking-[0.35em] uppercase font-semibold text-[#8B0000] mb-3 block">
+            VIP Lounge
+          </span>
+          <div className="w-16 h-[1.5px] bg-[#C5A059] mx-auto mb-6" />
+          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide text-[#1a0505]">
+            The <span className="font-script text-5xl md:text-6xl font-normal italic text-[#8B0000]">After-Dark</span> Experience
           </h2>
-          <p className="font-sans text-sm mt-4 max-w-xl mx-auto leading-relaxed" style={{color:"rgba(250,246,238,0.75)"}}>
+          <p className="font-sans text-sm mt-4 max-w-xl mx-auto leading-relaxed text-[#5C4A42]">
             After 10 PM, Bricks Lounge transforms into Miami's most sought-after VIP destination.
           </p>
         </div>
@@ -39,13 +43,18 @@ export default function LoungeSection() {
             <motion.div key={i}
               whileInView={{opacity:1,y:0}} initial={{opacity:0,y:20}}
               viewport={{once:true}} transition={{delay:i*0.1}}
-              className="card-on-brick p-6 text-center transition-all duration-300">
+              className="p-6 text-center transition-all duration-300 shadow-xl shadow-black/25 rounded-sm"
+              style={{
+                background: "rgba(18,5,5,0.92)",
+                border: "1.5px solid rgba(229,195,120,0.35)",
+                backdropFilter: "blur(8px)"
+              }}>
               <div className="w-10 h-10 flex items-center justify-center mx-auto mb-4 rounded-full"
-                style={{border:"1px solid rgba(229,195,120,0.35)", color:"#E5C378", background:"rgba(229,195,120,0.08)"}}>
+                style={{border:"1px solid rgba(229,195,120,0.40)", color:"#E5C378", background:"rgba(229,195,120,0.10)"}}>
                 <p.icon size={18}/>
               </div>
               <h4 className="font-display font-semibold text-base mb-2 tracking-wide" style={{color:"#FAF6EE"}}>{p.title}</h4>
-              <p className="font-sans text-xs leading-relaxed" style={{color:"rgba(250,246,238,0.60)"}}>{p.desc}</p>
+              <p className="font-sans text-xs leading-relaxed" style={{color:"rgba(250,246,238,0.70)"}}>{p.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -56,15 +65,14 @@ export default function LoungeSection() {
             <motion.div key={i}
               whileInView={{opacity:1,scale:1}} initial={{opacity:0,scale:0.97}}
               viewport={{once:true}} transition={{delay:i*0.12}}
-              className={`p-8 text-center transition-all duration-300 ${pkg.highlight ? "scale-105" : ""}`}
+              className={`p-8 text-center transition-all duration-300 rounded-sm ${pkg.highlight ? "scale-105 shadow-2xl shadow-black/40" : "shadow-xl shadow-black/25"}`}
               style={{
-                background: pkg.highlight ? "linear-gradient(135deg, #991428 0%, #750A19 100%)" : "rgba(12,2,2,0.65)",
-                border: pkg.highlight ? "1.5px solid #E5C378" : "1px solid rgba(229,195,120,0.20)",
-                boxShadow: pkg.highlight ? "0 10px 35px rgba(0,0,0,0.6), 0 0 25px rgba(229,195,120,0.25)" : "0 6px 20px rgba(0,0,0,0.4)",
+                background: pkg.highlight ? "linear-gradient(135deg, #991428 0%, #750A19 100%)" : "rgba(18,5,5,0.92)",
+                border: pkg.highlight ? "2px solid #E5C378" : "1.5px solid rgba(229,195,120,0.35)",
                 backdropFilter:"blur(8px)"
               }}>
               {pkg.highlight && (
-                <span className="inline-block text-xs tracking-[0.25em] uppercase font-sans mb-3 px-3 py-1 rounded-full bg-black/30 border border-[#E5C378]/40"
+                <span className="inline-block text-xs tracking-[0.25em] uppercase font-sans mb-3 px-3.5 py-1 rounded-full bg-black/35 border border-[#E5C378]/50"
                   style={{color:"#E5C378"}}>
                   Most Popular
                 </span>
@@ -73,7 +81,7 @@ export default function LoungeSection() {
               <p className="font-serif text-4xl mb-4 font-semibold" style={{color:"#E5C378"}}>
                 {pkg.price}<span className="text-lg font-sans font-normal text-[#FAF6EE]/70"> min</span>
               </p>
-              <p className="font-sans text-xs leading-relaxed mb-6" style={{color:"rgba(250,246,238,0.70)"}}>
+              <p className="font-sans text-xs leading-relaxed mb-6" style={{color:"rgba(250,246,238,0.75)"}}>
                 {pkg.desc}
               </p>
               <Link to="/reservations"
@@ -81,7 +89,7 @@ export default function LoungeSection() {
                 style={{
                   display:"inline-block", padding:"10px 28px",
                   border:"1.5px solid rgba(229,195,120,0.50)",
-                  background: pkg.highlight ? "rgba(229,195,120,0.18)" : "rgba(0,0,0,0.30)",
+                  background: pkg.highlight ? "rgba(229,195,120,0.18)" : "rgba(0,0,0,0.35)",
                   color: "#FAF6EE"
                 }}
                 onMouseEnter={e=>e.currentTarget.style.borderColor="#E5C378"}
@@ -93,9 +101,8 @@ export default function LoungeSection() {
         </div>
 
         {/* Fine print */}
-        <div className="flex items-center justify-center gap-2 text-xs font-sans text-center"
-          style={{color:"rgba(250,246,238,0.50)"}}>
-          <AlertTriangle size={13} style={{color:"#E5C378"}}/>
+        <div className="flex items-center justify-center gap-2 text-xs font-sans text-center text-[#5C4A42]">
+          <AlertTriangle size={13} style={{color:"#8B0000"}}/>
           <span>21+ only after 10 PM · Strict upscale dress code strictly enforced</span>
         </div>
       </div>
