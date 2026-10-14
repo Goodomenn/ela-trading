@@ -17,44 +17,50 @@ const packages = [
 
 export default function LoungeSection() {
   return (
-    <section id="lounge" className="relative py-24 border-y border-bl-gold/20"
-      style={{backgroundImage:"url('/textures/cream-plaster.png')", backgroundSize:"cover"}}>
-      {/* Light warm stucco/plaster overlay */}
-      <div className="absolute inset-0" style={{background:"rgba(247,242,231,0.78)"}}/>
-
+    <section id="lounge" className="relative py-24"
+      style={{backgroundImage:"url('/textures/brick.jpg')", backgroundSize:"cover", backgroundAttachment:"fixed"}}>
+      <div className="absolute inset-0" style={{background:"rgba(8,10,14,0.82)"}}/>
       <div className="relative z-10 section-inner">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="font-sans text-xs tracking-[0.35em] uppercase font-semibold text-[#8B0000] mb-3 block">
-            VIP Lounge
-          </span>
-          <div className="w-16 h-[1.5px] bg-[#C5A059] mx-auto mb-6" />
-          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide text-[#1a0505]">
-            The <span className="font-script text-5xl md:text-6xl font-normal italic text-[#8B0000]">After-Dark</span> Experience
+          <span className="section-label-light">VIP Lounge</span>
+          <div className="divider-white mx-auto"/>
+          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide" style={{color:"#FAF6EE"}}>
+            The <span className="font-script text-5xl md:text-6xl font-normal italic" style={{color:"#E5C378", textShadow:"0 0 16px rgba(229,195,120,0.35)"}}>After-Dark</span> Experience
           </h2>
-          <p className="font-sans text-sm mt-4 max-w-xl mx-auto leading-relaxed text-[#5C4A42]">
+          <p className="font-sans text-sm mt-4 max-w-xl mx-auto leading-relaxed" style={{color:"rgba(250,246,238,0.75)"}}>
             After 10 PM, Bricks Lounge transforms into Miami's most sought-after VIP destination.
           </p>
         </div>
 
-        {/* Perks grid */}
+        {/* Perks grid — cards have the cream plaster texture background */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {perks.map((p,i)=>(
             <motion.div key={i}
               whileInView={{opacity:1,y:0}} initial={{opacity:0,y:20}}
               viewport={{once:true}} transition={{delay:i*0.1}}
-              className="p-6 text-center transition-all duration-300 shadow-xl shadow-black/25 rounded-sm"
+              className="p-6 text-center transition-all duration-300 shadow-2xl shadow-black/50 rounded-sm relative overflow-hidden group hover:-translate-y-1"
               style={{
-                background: "rgba(18,5,5,0.92)",
-                border: "1.5px solid rgba(229,195,120,0.35)",
-                backdropFilter: "blur(8px)"
+                backgroundImage: "url('/textures/cream-plaster.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                border: "1.5px solid rgba(229,195,120,0.60)",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(229,195,120,0.15)"
               }}>
-              <div className="w-10 h-10 flex items-center justify-center mx-auto mb-4 rounded-full"
-                style={{border:"1px solid rgba(229,195,120,0.40)", color:"#E5C378", background:"rgba(229,195,120,0.10)"}}>
-                <p.icon size={18}/>
+              <div className="w-11 h-11 flex items-center justify-center mx-auto mb-4 rounded-full transition-transform group-hover:scale-110"
+                style={{
+                  border: "1.5px solid #C5A059",
+                  background: "rgba(197,160,89,0.20)",
+                  color: "#8E6E28"
+                }}>
+                <p.icon size={19} />
               </div>
-              <h4 className="font-display font-semibold text-base mb-2 tracking-wide" style={{color:"#FAF6EE"}}>{p.title}</h4>
-              <p className="font-sans text-xs leading-relaxed" style={{color:"rgba(250,246,238,0.70)"}}>{p.desc}</p>
+              <h4 className="font-display font-bold text-base mb-2 tracking-wider text-[#1a0505]">
+                {p.title}
+              </h4>
+              <p className="font-sans text-xs leading-relaxed text-[#4A3B34] font-medium">
+                {p.desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -101,8 +107,9 @@ export default function LoungeSection() {
         </div>
 
         {/* Fine print */}
-        <div className="flex items-center justify-center gap-2 text-xs font-sans text-center text-[#5C4A42]">
-          <AlertTriangle size={13} style={{color:"#8B0000"}}/>
+        <div className="flex items-center justify-center gap-2 text-xs font-sans text-center"
+          style={{color:"rgba(250,246,238,0.55)"}}>
+          <AlertTriangle size={13} style={{color:"#E5C378"}}/>
           <span>21+ only after 10 PM · Strict upscale dress code strictly enforced</span>
         </div>
       </div>
