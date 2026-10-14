@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CalendarCheck, Star, ChevronDown } from "lucide-react";
+import { CalendarCheck, Star } from "lucide-react";
 
 export default function Hero() {
   const canvasRef = useRef(null);
@@ -44,19 +44,7 @@ export default function Hero() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-16">
-        <motion.div initial={{opacity:0,y:-10}} animate={{opacity:1,y:0}} transition={{delay:0.2}} className="mb-4">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans text-xs tracking-[0.35em] uppercase"
-            style={{
-              border: "1px solid rgba(229,195,120,0.35)",
-              background: "rgba(12,2,2,0.60)",
-              backdropFilter: "blur(8px)",
-              color: "#E5C378",
-              boxShadow: "0 2px 20px rgba(0,0,0,0.5)"
-            }}>
-            Fine Dining &amp; VIP Lounge · Miami
-          </span>
-        </motion.div>
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
 
         {/* Large display name: Sculpted Architectural "BRICKS" + Fluid Champagne "Lounge" */}
         <motion.h1 initial={{opacity:0,scale:0.94}} animate={{opacity:1,scale:1}} transition={{delay:0.4,duration:0.8}}
@@ -107,33 +95,7 @@ export default function Hero() {
             <Star size={14} fill="currentColor"/> Book VIP Service
           </Link>
         </motion.div>
-
-        {/* Stats row */}
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.3}}
-          className="mt-16 pt-8 flex justify-center gap-12"
-          style={{borderTop:"1px solid rgba(229,195,120,0.20)"}}>
-          {[["4.8★","Guest Rating"],["300+","Events Hosted"],["7 Yrs","In Miami"]].map(([v,l])=>(
-            <div key={l} className="text-center">
-              <p className="font-display font-semibold text-2xl md:text-3xl"
-                style={{
-                  color:"#E5C378",
-                  textShadow:"0 2px 14px rgba(0,0,0,0.8), 0 0 16px rgba(229,195,120,0.3)"
-                }}>{v}</p>
-              <p className="font-sans text-xs tracking-[0.25em] uppercase mt-1"
-                style={{color:"rgba(250,246,238,0.60)"}}>{l}</p>
-            </div>
-          ))}
-        </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.5}}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="font-sans text-xs tracking-[0.25em] uppercase" style={{color:"rgba(229,195,120,0.65)"}}>Scroll</span>
-        <motion.div animate={{y:[0,8,0]}} transition={{repeat:Infinity,duration:1.8}}>
-          <ChevronDown size={20} style={{color:"rgba(229,195,120,0.65)"}}/>
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
