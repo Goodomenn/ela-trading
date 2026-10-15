@@ -3,7 +3,6 @@ import Hero from "../components/Hero.jsx";
 import ExperienceStrip from "../components/ExperienceStrip.jsx";
 import DiningSection from "../components/DiningSection.jsx";
 import LoungeSection from "../components/LoungeSection.jsx";
-import EventsSection from "../components/EventsSection.jsx";
 
 export default function HomePage() {
   return (
@@ -43,7 +42,6 @@ export default function HomePage() {
       <ExperienceStrip />
       <DiningSection />
       <LoungeSection />
-      <EventsSection />
     </>
   );
 }

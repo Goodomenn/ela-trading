@@ -159,7 +159,7 @@ export default function LoungeSection() {
                 <span className="block text-[11px] font-sans uppercase tracking-widest text-[#6B5A52]">Programming</span>
                 <span className="font-display font-bold text-lg text-[#1a0505]">Thu – Sun · 10 PM Till Late</span>
               </div>
-              <a href="#events"
+              <Link to="/reservations"
                 className="font-sans text-xs tracking-widest uppercase transition-all duration-200 px-6 py-3 rounded-sm font-semibold"
                 style={{
                   border: "1.5px solid #8E6E28",
@@ -174,8 +174,8 @@ export default function LoungeSection() {
                   e.currentTarget.style.background = "rgba(197,160,89,0.18)";
                   e.currentTarget.style.borderColor = "#8E6E28";
                 }}>
-                View DJ Schedule →
-              </a>
+                Inquire DJ Guestlist →
+              </Link>
             </div>
           </motion.div>
         </div>
