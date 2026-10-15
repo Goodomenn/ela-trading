@@ -1,165 +1,235 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Leaf, Award, Heart, Users } from "lucide-react";
+import { Leaf, Award, Heart, Sparkles, CalendarCheck } from "lucide-react";
 
 const values = [
-  { icon: Leaf,  title: "Farm-to-Table",       desc: "We source our ingredients from local farms and sustainable purveyors, ensuring every dish reflects the season at its peak." },
-  { icon: Award, title: "Award-Winning",        desc: "Recognised by the James Beard Foundation and Miami's dining press as a benchmark for culinary excellence." },
-  { icon: Heart, title: "Crafted with Soul",    desc: "Every plate, every pour, every detail is executed with genuine passion by a team that truly loves what it does." },
-  { icon: Users, title: "Community First",      desc: "From neighbourhood gatherings to charity dinners, Bricks is woven into the fabric of the Miami community." },
+  { icon: Leaf,     title: "Heritage & Terroir",   desc: "Honoring ancient Ethiopian culinary roots, highland organic spices, and premier sustainable purveyors to bring pure flavor to every plate." },
+  { icon: Award,    title: "Gastronomic Artistry", desc: "Applying refined international culinary techniques to authentic recipes, delivering an unforgettable and elevated feast for the senses." },
+  { icon: Heart,    title: "Soulful Hospitality",  desc: "Warm, attentive, and anticipatory service rooted in genuine passion, treating every guest to an extraordinary and memorable evening." },
+  { icon: Sparkles, title: "After-Dark Energy",    desc: "Seamlessly transitioning from relaxed gourmet dining into Miami's most sought-after late-night lounge with world-class live DJs." },
 ];
 
 const timeline = [
-  { year: "2018", title: "Doors Open",                  desc: "Chef Marco Bellini and partners open Bricks Lounge on Velvet Boulevard, instantly drawing Miami's food-lovers." },
-  { year: "2019", title: "Best New Restaurant",         desc: "Miami New Times crowns us Best New Restaurant; reservations sell out weeks in advance." },
-  { year: "2021", title: "The Lounge Is Born",          desc: "The ground-floor lounge launches with a cocktail program by Sofia Castillo, redefining late-night dining in the city." },
-  { year: "2023", title: "Wine Award",                  desc: "Wine Spectator Award of Excellence — our 400-label cellar earns international recognition." },
-  { year: "2024", title: "James Beard Semifinalist",    desc: "Chef Bellini named a James Beard Outstanding Chef semifinalist, a milestone for the whole team." },
-  { year: "2026", title: "Today",                       desc: "Still cooking with the same fire. Still pouring with the same care. Still yours." },
+  { year: "2018", title: "The Vision Takes Root",       desc: "Founded with the ambition to bring authentic Ethiopian spices and international fine dining to Miami's vibrant culinary scene." },
+  { year: "2020", title: "Culinary Distinction",        desc: "Celebrated by regional critics for redefining modern ethnic fusion and bringing artisanal niter kibbeh and dry-aged cuts together." },
+  { year: "2022", title: "The Lounge & Live DJ Stage",  desc: "Expanded into an elevated after-dark sanctuary, introducing custom masonry VIP booths and world-class electronic DJ programming." },
+  { year: "2024", title: "Award of Excellence",         desc: "Recognized for our 400-bottle cellar, house Tej infusions, and Michelin-caliber tableside hospitality." },
+  { year: "2026", title: "Today",                       desc: "Still honoring tradition. Still evolving flavor. Miami's premier destination for dining and upscale nightlife." },
 ];
 
 const team = [
-  { name: "Marco Bellini",    role: "Executive Chef & Co-Founder", bio: "A Milanese native trained under three Michelin-starred mentors, Marco brings old-world technique to New World ingredients.", color: "from-bl-brick to-bl-brick-deep" },
-  { name: "Sofia Castillo",   role: "Head of Cocktails",           bio: "Sofia spent a decade behind bars in Buenos Aires and Barcelona before crafting the most talked-about cocktail menu in Miami.", color: "from-amber-700 to-amber-900" },
-  { name: "Antoine Rousseau", role: "Maître d'",                   bio: "Antoine's decades of front-of-house experience in Paris and New York ensure every guest feels like a VIP from the moment they arrive.", color: "from-slate-600 to-slate-800" },
-  { name: "Leila Khoury",     role: "VIP & Events Director",       bio: "Leila curates private experiences for Miami's most discerning clientele, from intimate dinners to full venue takeovers.", color: "from-purple-700 to-purple-900" },
+  { name: "Executive Chef",      role: "Culinary Director",     bio: "Bringing decades of international mastery and deep reverence for Ethiopian spice architecture to every signature creation." },
+  { name: "Head of Mixology",    role: "Beverage Director",     bio: "Crafting bespoke cocktails featuring spiced honey wine reductions, single-origin coffee infusions, and rare spirits." },
+  { name: "VIP Concierge Lead",  role: "Guest Experience",      bio: "Dedicated to curating flawless private booth evenings, seamless arrivals, and bespoke bottle service presentations." },
+  { name: "Resident Sound Lead", role: "Music & Programming",   bio: "Curating international headliners and resident electronic tastemakers for our weekend soundscapes." },
 ];
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
+const fadeUp = { hidden: { opacity: 0, y: 25 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
+const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
 export default function AboutPage() {
   return (
-    <main className="bg-bl-brick-bg text-bl-cream min-h-screen">
+    <main className="bg-[#080A0E] text-[#FAF6EE] min-h-screen">
       <Helmet>
         <title>Our Story &amp; Philosophy | Bricks Lounge Miami</title>
         <meta
           name="description"
-          content="Discover the journey behind Bricks Lounge Miami. Led by Executive Chef Marco Bellini, experience our passion for farm-to-table cuisine and world-class hospitality."
+          content="Discover the journey behind Bricks Lounge Miami. Step into a dining experience where time-honored Ethiopian culinary traditions meet world-class international gastronomy."
         />
         <meta
           name="keywords"
-          content="about Bricks Lounge, Marco Bellini chef, Miami upscale dining story, James Beard semifinalist Miami, Bricks Lounge history"
+          content="about Bricks Lounge, Ethiopian fine dining Miami, Miami upscale dining story, VIP lounge Miami, Bricks Lounge history"
         />
         <link rel="canonical" href="https://www.brickslounge.com/about" />
         <meta property="og:title" content="Our Story &amp; Philosophy | Bricks Lounge Miami" />
         <meta
           property="og:description"
-          content="Discover the journey behind Bricks Lounge Miami. Led by Executive Chef Marco Bellini, experience our passion for farm-to-table cuisine and world-class hospitality."
+          content="Where time-honored Ethiopian culinary traditions meet world-class international gastronomy."
         />
         <meta property="og:url" content="https://www.brickslounge.com/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.brickslounge.com/textures/brick.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Story &amp; Philosophy | Bricks Lounge Miami" />
-        <meta
-          name="twitter:description"
-          content="Discover the journey behind Bricks Lounge Miami. Led by Executive Chef Marco Bellini, experience our passion for farm-to-table cuisine and world-class hospitality."
-        />
-        <meta name="twitter:image" content="https://www.brickslounge.com/textures/brick.jpg" />
       </Helmet>
+
       {/* ─── HERO ─── */}
-      <div className="relative pt-32 pb-16 overflow-hidden border-b border-bl-brick/30">
-        <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/82 via-black/70 to-black/82" />
+      <div className="relative pt-36 pb-20 overflow-hidden border-b border-[#E5C378]/25"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.85)" }} />
         <div className="section-inner relative z-10 text-center">
-          <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="section-label mb-4">
-            Our Story
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }} className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-3xl mx-auto leading-tight">
-            Born from a Love of Food, Night &amp; People
+          <motion.span initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+            className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-4 block">
+            Our Story &amp; Vision
+          </motion.span>
+          <div className="w-16 h-0.5 bg-[#C5A059] mx-auto mb-6" />
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display text-4xl md:text-6xl font-bold tracking-wide mb-6 max-w-4xl mx-auto leading-tight text-[#FAF6EE]">
+            Tradition Meets <span className="font-script text-5xl md:text-7xl font-normal italic" style={{ color: "#E5C378", textShadow: "0 0 18px rgba(229,195,120,0.35)" }}>Gastronomy</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.65, delay: 0.25 }} className="text-bl-muted text-lg max-w-2xl mx-auto">
-            Bricks Lounge started as a dream on a napkin and became Miami&apos;s most beloved dining experience. Here&apos;s how.
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.25 }}
+            className="font-sans text-sm md:text-base text-[#FAF6EE]/80 max-w-2xl mx-auto leading-relaxed font-normal">
+            Step into a dining experience where time-honored Ethiopian culinary traditions meet world-class international gastronomy. Our chefs artfully harmonize vibrant local spices and authentic recipes with refined global techniques to deliver an unforgettable feast for the senses.
           </motion.p>
         </div>
       </div>
 
       {/* ─── VALUES ─── */}
-      <section className="relative py-20">
-        <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/wood.jpg')", backgroundSize: "cover" }} />
-        <div className="absolute inset-0 bg-black/80" />
+      <section className="relative py-24"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.88)" }} />
         <div className="section-inner relative z-10">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={fadeUp} className="section-label text-center mb-3">What We Stand For</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-center mb-14">Our Core Values</motion.h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map(({ icon: Icon, title, desc }) => (
-                <motion.div key={title} variants={fadeUp} className="bg-bl-card border border-bl-brick/20 rounded-xl p-8 hover:border-bl-brick/50 transition-colors group">
-                  <div className="w-12 h-12 rounded-full bg-bl-brick/15 flex items-center justify-center mb-5 group-hover:bg-bl-brick/30 transition-colors">
-                    <Icon className="text-bl-brick" size={22} />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">{title}</h3>
-                  <p className="text-bl-muted text-sm leading-relaxed">{desc}</p>
-                </motion.div>
-              ))}
-            </div>
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
+            <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block">
+              What We Stand For
+            </span>
+            <div className="w-12 h-0.5 bg-[#C5A059] mx-auto mb-5" />
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-wide text-[#FAF6EE]">
+              Our Core <span className="font-script text-4xl md:text-6xl font-normal italic" style={{ color: "#E5C378" }}>Values</span>
+            </h2>
           </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map(({ icon: Icon, title, desc }) => (
+              <motion.div key={title}
+                whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 25 }}
+                viewport={{ once: true }} transition={{ duration: 0.4 }}
+                className="p-7 rounded-sm transition-all duration-300 group hover:-translate-y-1 shadow-2xl flex flex-col justify-between"
+                style={{
+                  backgroundImage: "url('/textures/cream-plaster.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  border: "1.5px solid rgba(229,195,120,0.60)",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.4), 0 0 15px rgba(229,195,120,0.12)"
+                }}>
+                <div>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5 transition-transform group-hover:scale-110"
+                    style={{
+                      border: "1.5px solid #C5A059",
+                      background: "rgba(197,160,89,0.22)",
+                      color: "#8E6E28"
+                    }}>
+                    <Icon size={22} />
+                  </div>
+                  <h3 className="font-display font-bold text-lg mb-3 tracking-wide text-[#1a0505]">
+                    {title}
+                  </h3>
+                  <p className="font-sans text-xs md:text-sm leading-relaxed text-[#4A3B34] font-medium">
+                    {desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ─── TIMELINE ─── */}
-      <section className="py-20 bg-bl-brick-bg">
-        <div className="section-inner">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={fadeUp} className="section-label text-center mb-3">Our Journey</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-center mb-16">A Timeline of Milestones</motion.h2>
-            <div className="relative max-w-3xl mx-auto">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-bl-brick/30" />
-              <div className="space-y-10">
-                {timeline.map(({ year, title, desc }, i) => (
-                  <motion.div key={year} variants={fadeUp} className="flex gap-8 pl-16 relative">
-                    <div className="absolute left-0 top-1 w-12 h-12 rounded-full bg-bl-card border-2 border-bl-brick flex items-center justify-center flex-shrink-0 z-10">
-                      <span className="text-bl-brick text-xs font-bold leading-none text-center">{year}</span>
-                    </div>
-                    <div className="bg-bl-card border border-bl-brick/20 rounded-xl p-6 flex-1 hover:border-bl-brick/40 transition-colors">
-                      <h3 className="font-semibold text-bl-cream mb-2">{title}</h3>
-                      <p className="text-bl-muted text-sm leading-relaxed">{desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+      <section className="relative py-24 border-t border-[#E5C378]/20"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.92)" }} />
+        <div className="section-inner relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block">
+              Our Journey
+            </span>
+            <div className="w-12 h-0.5 bg-[#C5A059] mx-auto mb-5" />
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-wide text-[#FAF6EE]">
+              Milestones of <span className="font-script text-4xl md:text-6xl font-normal italic" style={{ color: "#E5C378" }}>Excellence</span>
+            </h2>
+          </div>
+
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-[#C5A059]/40" />
+            <div className="space-y-8">
+              {timeline.map(({ year, title, desc }) => (
+                <div key={year} className="flex gap-8 pl-16 relative group">
+                  <div className="absolute left-0 top-1 w-12 h-12 rounded-full bg-[#080A0E] border-2 border-[#E5C378] flex items-center justify-center flex-shrink-0 z-10 shadow-lg shadow-black/80">
+                    <span className="font-display text-[#E5C378] text-xs font-bold leading-none">{year}</span>
+                  </div>
+                  <div className="p-6 rounded-sm flex-1 transition-all duration-300 shadow-xl"
+                    style={{
+                      backgroundImage: "url('/textures/cream-plaster.png')",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      border: "1.5px solid rgba(229,195,120,0.60)",
+                      boxShadow: "0 8px 25px rgba(0,0,0,0.35)"
+                    }}>
+                    <h3 className="font-display font-bold text-lg text-[#1a0505] mb-2">{title}</h3>
+                    <p className="font-sans text-xs md:text-sm text-[#4A3B34] leading-relaxed font-medium">{desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ─── TEAM ─── */}
-      <section className="relative py-20">
-        <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/wood.jpg')", backgroundSize: "cover" }} />
-        <div className="absolute inset-0 bg-black/80" />
+      <section className="relative py-24 border-t border-[#E5C378]/20"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.88)" }} />
         <div className="section-inner relative z-10">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={fadeUp} className="section-label text-center mb-3">The People</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-center mb-14">Meet the Team</motion.h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.map(({ name, role, bio, color }) => (
-                <motion.div key={name} variants={fadeUp} className="bg-bl-card border border-bl-brick/20 rounded-xl p-7 hover:border-bl-brick/40 transition-colors text-center">
-                  <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${color} flex items-center justify-center mx-auto mb-5 text-3xl font-bold text-white`}>
-                    {name.charAt(0)}
-                  </div>
-                  <h3 className="font-semibold text-bl-cream mb-1">{name}</h3>
-                  <p className="text-bl-brick text-xs font-medium uppercase tracking-wider mb-4">{role}</p>
-                  <p className="text-bl-muted text-sm leading-relaxed">{bio}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <div className="text-center mb-16">
+            <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block">
+              The Leadership
+            </span>
+            <div className="w-12 h-0.5 bg-[#C5A059] mx-auto mb-5" />
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-wide text-[#FAF6EE]">
+              Behind the <span className="font-script text-4xl md:text-6xl font-normal italic" style={{ color: "#E5C378" }}>Craft</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map(({ name, role, bio }) => (
+              <div key={name}
+                className="p-7 text-center rounded-sm transition-all duration-300 shadow-xl hover:-translate-y-1"
+                style={{
+                  backgroundImage: "url('/textures/cream-plaster.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  border: "1.5px solid rgba(229,195,120,0.60)",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.35)"
+                }}>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-display font-bold text-xl text-[#8E6E28]"
+                  style={{
+                    border: "1.5px solid #C5A059",
+                    background: "rgba(197,160,89,0.22)"
+                  }}>
+                  {name.charAt(0)}
+                </div>
+                <h3 className="font-display font-bold text-lg text-[#1a0505] mb-1">{name}</h3>
+                <p className="text-[#8E6E28] font-sans text-xs font-semibold uppercase tracking-wider mb-3">{role}</p>
+                <p className="font-sans text-xs text-[#4A3B34] leading-relaxed font-medium">{bio}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-20 bg-bl-brick-bg">
-        <div className="section-inner text-center">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={fadeUp} className="section-label mb-4">Join Us</motion.p>
-            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Bricks?</motion.h2>
-            <motion.p variants={fadeUp} className="text-bl-muted max-w-xl mx-auto mb-10 text-lg">Reserve your table or explore our menus — every visit is a new chapter.</motion.p>
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/reservations" className="btn-brick">Reserve a Table</Link>
-              <Link to="/menu" className="btn-wood">View the Menu</Link>
-            </motion.div>
+      <section className="relative py-20 border-t border-[#E5C378]/25"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.92)" }} />
+        <div className="section-inner text-center relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block">
+              Experience Bricks
+            </span>
+            <div className="w-12 h-0.5 bg-[#C5A059] mx-auto mb-5" />
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-[#FAF6EE]">
+              Join Us for an <span className="font-script text-4xl md:text-6xl font-normal italic" style={{ color: "#E5C378" }}>Unforgettable Night</span>
+            </h2>
+            <p className="font-sans text-sm md:text-base text-[#FAF6EE]/75 max-w-lg mx-auto mb-8 font-medium">
+              Reserve your dining table or private VIP booth — let our culinary team and dedicated hosts immerse you in luxury.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/reservations" className="btn-brick inline-flex items-center gap-2">
+                <CalendarCheck size={16} /> Reserve a Table
+              </Link>
+              <Link to="/menu" className="btn-ghost-white inline-flex items-center gap-2">
+                Explore the Menu
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

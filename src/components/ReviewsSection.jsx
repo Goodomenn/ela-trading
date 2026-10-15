@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const reviews = [
-  { name:"Amara T.",  init:"AT", color:"#8B0000", rating:5, text:"The brick walls give it incredible raw energy — the food is Michelin-level refined. The contrast is stunning.", source:"Google" },
+  { name:"Amara T.",  init:"AT", color:"#8E6E28", rating:5, text:"The brick walls give it incredible raw energy — the food is Michelin-level refined. The contrast is stunning.", source:"Google" },
   { name:"Daniel R.", init:"DR", color:"#5C2E0A", rating:5, text:"VIP booth on a Friday night — bottle service was flawless. Best night out in Miami, period.", source:"TripAdvisor" },
   { name:"Layla M.",  init:"LM", color:"#6B3520", rating:5, text:"The tasting menu was a 7-course revelation. Chef Marco is a genius. We will be back every month.", source:"Yelp" },
 ];

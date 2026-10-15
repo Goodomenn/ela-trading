@@ -20,11 +20,11 @@ export default function MobileBottomNav() {
             style={({isActive})=>({
               flex:1, display:"flex", flexDirection:"column", alignItems:"center",
               justifyContent:"center", padding:"10px 0", gap:4,
-              color: vip ? "#FAF6EE" : isActive ? "#E5C378" : "rgba(250,246,238,0.55)",
-              background: vip ? "linear-gradient(135deg, #991428, #750A19)" : "transparent",
+              color: vip ? "#1a0505" : isActive ? "#E5C378" : "rgba(250,246,238,0.55)",
+              background: vip ? "linear-gradient(135deg, #ECC880, #C59B4E)" : "transparent",
               transition:"all 0.2s"
             })}>
-            <Icon size={20} fill={vip?"currentColor":"none"} style={{color: vip ? "#FAF6EE" : "inherit"}}/>
+            <Icon size={20} fill={vip?"currentColor":"none"} style={{color: vip ? "#1a0505" : "inherit"}}/>
             <span style={{fontSize:"10px", letterSpacing:"0.15em", textTransform:"uppercase", fontFamily:"Inter,sans-serif"}}>{label}</span>
           </NavLink>
         ))}

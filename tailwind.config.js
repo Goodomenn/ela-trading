@@ -4,39 +4,43 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury Gold & Champagne (harmonizes with brick & ambient lighting)
+        // Luxury Gold & Champagne (harmonizes with stone & ambient lighting)
         "bl-gold":        "#E5C378",
         "bl-gold-light":  "#F3E5AB",
         "bl-gold-dark":   "#C5A059",
         "bl-champagne":   "#F5E6CA",
         "bl-ivory":       "#FAF6EE",
 
-        // Brick reds
-        "bl-brick":       "#C41E3A",
-        "bl-brick-deep":  "#8B0000",
-        "bl-brick-light": "#E03050",
-        "bl-brick-bg":    "#120303",
-        // Wood browns
-        "bl-wood":        "#2C1008",
-        "bl-wood-mid":    "#5C2E0A",
-        "bl-wood-light":  "#8B4513",
-        "bl-wood-warm":   "#6B3520",
-        // Plaster whites
+        // Replaced red palette with Warm Bronze & Antique Gold (NO RED)
+        "bl-brick":       "#C5A059",
+        "bl-brick-deep":  "#8E6E28",
+        "bl-brick-light": "#E5C378",
+        "bl-brick-bg":    "#080A0E",
+
+        // Wood & Stone browns
+        "bl-wood":        "#15181E",
+        "bl-wood-mid":    "#242A35",
+        "bl-wood-light":  "#3B4454",
+        "bl-wood-warm":   "#2C2218",
+
+        // Plaster whites & creams
         "bl-plaster":     "#F0ECE6",
         "bl-plaster-mid": "#D8D2C8",
         "bl-plaster-dark":"#B8B0A6",
+
         // Text
         "bl-cream":       "#F7F2E7",
         "bl-offwhite":    "#EDE8E0",
         "bl-muted":       "#A8A09A",
-        "bl-dimmed":      "#6A625C",
-        // Cards / surfaces
-        "bl-surface":     "#1E0808",
-        "bl-card":        "#261010",
-        "bl-elevated":    "#301515",
-        "bl-border":      "rgba(229,195,120,0.25)",
-        "bl-border-wood": "rgba(139,69,19,0.3)",
-        "bl-border-light":"rgba(180,170,160,0.4)",
+        "bl-dimmed":      "#736C65",
+
+        // Cards / surfaces (luxury obsidian & bronze borders)
+        "bl-surface":     "#0F1217",
+        "bl-card":        "#13171F",
+        "bl-elevated":    "#1A202C",
+        "bl-border":      "rgba(229,195,120,0.30)",
+        "bl-border-wood": "rgba(197,160,89,0.35)",
+        "bl-border-light":"rgba(229,195,120,0.45)",
       },
       fontFamily: {
         display: ["'Cinzel'", "'Playfair Display'", "Georgia", "serif"],
@@ -48,8 +52,8 @@ export default {
         "brick-texture":   "url('/textures/brick.jpg')",
         "wood-texture":    "url('/textures/wood.jpg')",
         "plaster-texture": "url('/textures/plaster.png')",
-        "brick-gradient":  "linear-gradient(135deg, #8B0000 0%, #C41E3A 50%, #8B0000 100%)",
-        "wood-gradient":   "linear-gradient(180deg, #2C1008 0%, #5C2E0A 50%, #2C1008 100%)",
+        "brick-gradient":  "linear-gradient(135deg, #ECC880 0%, #C59B4E 50%, #8E6E28 100%)",
+        "wood-gradient":   "linear-gradient(180deg, #15181E 0%, #242A35 50%, #15181E 100%)",
         "gold-gradient":   "linear-gradient(135deg, #FFF6E5 0%, #E5C378 40%, #ECC880 70%, #C59B4E 100%)",
       },
     },

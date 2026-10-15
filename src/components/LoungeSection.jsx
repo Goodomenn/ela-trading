@@ -44,7 +44,7 @@ export default function LoungeSection() {
                   }}>
                   <Star size={22} />
                 </div>
-                <span className="inline-block text-[11px] tracking-[0.22em] uppercase font-sans font-semibold px-3.5 py-1 rounded-full bg-[#8B0000] text-[#FAF6EE] border border-[#E5C378]/60 shadow-sm">
+                <span className="inline-block text-[11px] tracking-[0.22em] uppercase font-sans font-semibold px-3.5 py-1 rounded-full bg-[#1a0505] text-[#E5C378] border border-[#E5C378]/60 shadow-sm">
                   Exclusive Reserve
                 </span>
               </div>
@@ -82,15 +82,15 @@ export default function LoungeSection() {
             <div className="pt-4 border-t border-[#C5A059]/30 flex flex-wrap items-center justify-between gap-4">
               <div>
                 <span className="block text-[11px] font-sans uppercase tracking-widest text-[#6B5A52]">Reservations</span>
-                <span className="font-display font-bold text-lg text-[#8B0000]">Custom Booth Packages</span>
+                <span className="font-display font-bold text-lg text-[#1a0505]">Custom Booth Packages</span>
               </div>
               <Link to="/reservations"
                 className="font-sans text-xs tracking-widest uppercase transition-all duration-200 px-6 py-3 rounded-sm font-semibold"
                 style={{
-                  border: "1.5px solid rgba(229,195,120,0.70)",
-                  background: "linear-gradient(135deg, #991428 0%, #750A19 100%)",
-                  color: "#FAF6EE",
-                  boxShadow: "0 4px 18px rgba(117,10,25,0.45)"
+                  border: "1.5px solid #C5A059",
+                  background: "linear-gradient(135deg, #ECC880 0%, #C59B4E 100%)",
+                  color: "#1a0505",
+                  boxShadow: "0 4px 18px rgba(197,160,89,0.35)"
                 }}>
                 Reserve Private Booth →
               </Link>

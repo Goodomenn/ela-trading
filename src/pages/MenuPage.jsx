@@ -8,112 +8,120 @@ const tabs = ["Starters", "Mains", "Desserts", "Cocktails", "Wine"];
 
 const menuData = {
   Starters: [
-    { name: "Burrata & Heirloom Tomato",  price: "$22",      desc: "House-made burrata, vine-ripened heirloom tomatoes, aged balsamic, micro basil.",              badge: null },
-    { name: "Wagyu Beef Tataki",           price: "$38",      desc: "Thinly seared A5 wagyu, ponzu, toasted sesame, pickled daikon, crispy shallots.",              badge: null },
-    { name: "Seared Scallops",             price: "$34",      desc: "Day-boat scallops, roasted cauliflower purée, pancetta crisp, caper brown butter.",             badge: "Seasonal" },
-    { name: "Truffle Arancini",            price: "$26",      desc: "Crispy saffron risotto balls, black truffle, fontina, smoked tomato coulis.",                  badge: null },
-    { name: "Tuna Tartare",               price: "$32",      desc: "Yellowfin tuna, avocado, lime zest, sesame oil, wonton crisps, chilli oil.",                   badge: null },
-    { name: "Foie Gras Torchon",           price: "$44",      desc: "House-cured foie gras, brioche toast, Sauternes gel, pickled cherry, fleur de sel.",           badge: "Signature" },
+    { name: "Kitfo Steak Tartare",          price: "$28",      desc: "Hand-minced prime beef tenderloin, infused mitmita spiced ghee (niter kibbeh), house ayib cheese, crispy injera chips.", badge: "Signature" },
+    { name: "Sambusa de Canard",           price: "$24",      desc: "Confit duck leg, caramelized shallots, cardamom-berbere glaze, cilantro-lime herb purée.", badge: "Chef Pick" },
+    { name: "Artisanal Burrata & Beets",   price: "$22",      desc: "Imported burrata, spiced Ethiopian wild honey reduction, roasted golden beets, toasted pistachios, micro basil.", badge: null },
+    { name: "Truffled Arancini & Ayib",    price: "$26",      desc: "Crispy saffron risotto spheres, fontina core, whipped spiced ayib cream, shaved black winter truffle.", badge: "Signature" },
+    { name: "Yellowfin Tuna Crudo",        price: "$32",      desc: "Sashimi-grade tuna, korarima pepper citrus vinaigrette, avocado mousse, toasted sesame, crispy teff wafer.", badge: null },
+    { name: "Foie Gras & Doro Glaze",      price: "$44",      desc: "Pan-seared Hudson Valley foie gras, brioche toast, caramelized shallot & berbere gastrique, pomegranate pearls.", badge: "Prestige" },
   ],
   Mains: [
-    { name: "Dry-Aged Ribeye 14oz",        price: "$88",      desc: "45-day dry-aged prime ribeye, bone marrow butter, roasted shallot, pomme purée.",              badge: "Signature" },
-    { name: "Mediterranean Sea Bass",      price: "$56",      desc: "Line-caught sea bass, saffron broth, charred fennel, olive tapenade, micro herbs.",            badge: null },
-    { name: "Duck Breast Confit",          price: "$62",      desc: "48-hour confit duck, cherry jus, roasted beetroot, pistachio, fresh thyme.",                   badge: "Chef Pick" },
-    { name: "Wild Mushroom Risotto",       price: "$44",      desc: "Arborio rice, porcini, shiitake, truffle oil, aged parmesan, chive oil. (V)",                  badge: "Veg" },
-    { name: "Lamb Rack Two Bone",          price: "$72",      desc: "Herb-crusted Colorado lamb, harissa jus, roasted aubergine, mint gremolata.",                  badge: null },
-    { name: "Lobster Linguine",            price: "$68",      desc: "Whole Maine lobster, house linguine, nduja butter, cherry tomatoes, fresh tarragon.",          badge: "Seasonal" },
+    { name: "Berbere Dry-Aged Ribeye 14oz", price: "$88",     desc: "45-day dry-aged prime ribeye, berbere compound butter, bone marrow jus, roasted garlic pomme purée.", badge: "Signature" },
+    { name: "Doro Wat Confit",             price: "$58",      desc: "Slow-confit heritage chicken, 12-hour spiced sweet onion reduction, soft organic quail egg, artisanal teff crisps.", badge: "Heritage" },
+    { name: "Pan-Seared Chilean Sea Bass", price: "$64",      desc: "Wild line-caught sea bass, cardamom lemongrass fumet, wilted spiced gomen greens, saffron basmati.", badge: "Chef Pick" },
+    { name: "Rosemary Lamb Shank Tibs",    price: "$68",      desc: "Slow-braised Colorado lamb shank, rosemary niter kibbeh jus, caramelized peppers, creamy polenta cake.", badge: "Signature" },
+    { name: "Wild Forest Mushroom Risotto", price: "$44",     desc: "Acquerello carnaroli rice, porcini, shiitake, korarima brown butter, 24-month Parmigiano-Reggiano, chive oil. (V)", badge: "Veg" },
+    { name: "Butter-Poached Lobster Tibs", price: "$76",      desc: "Whole Maine lobster tail, spiced clarified butter, sweet blistered cherry tomatoes, fresh tarragon, teff blinis.", badge: "Seasonal" },
   ],
   Desserts: [
-    { name: "Valrhona Chocolate Fondant", price: "$18",      desc: "Warm Valrhona 72% fondant, salted caramel centre, Madagascan vanilla ice cream.",             badge: "Signature" },
-    { name: "Yuzu Cheesecake",            price: "$16",      desc: "Silky yuzu cheesecake, yuzu curd, compressed mango, toasted sesame crumble.",                 badge: null },
-    { name: "Tasting Cheese Board",       price: "$28",      desc: "Selection of five artisan cheeses, honeycomb, fig preserve, walnut bread, quince paste.",     badge: null },
-    { name: "Mango Coconut Panna Cotta",  price: "$15",      desc: "Coconut milk panna cotta, fresh mango coulis, lime zest, toasted coconut.",                   badge: null },
-    { name: "Soufflé du Jour",            price: "$20",      desc: "Our pastry chef's daily soufflé — light, airy, unmissable. Ask your server for today's flavour.", badge: "Must Try" },
+    { name: "Yirgacheffe Coffee Tiramisu", price: "$18",      desc: "Espresso-soaked ladyfingers, whipped mascarpone, dark cocoa, single-origin Ethiopian Yirgacheffe coffee reduction.", badge: "Signature" },
+    { name: "Valrhona Chocolate Fondant",  price: "$18",      desc: "Warm 72% dark chocolate fondant, cardamom salted caramel centre, Madagascan vanilla bean gelato.", badge: "Must Try" },
+    { name: "Tej Honey Wine Panna Cotta",  price: "$16",      desc: "Silky coconut cream panna cotta, house Tej (honey wine) reduction, compressed ripe mango, roasted pistachios.", badge: null },
+    { name: "Artisan Fromage Board",       price: "$28",      desc: "Five curated European cheeses, raw Ethiopian wild acacia honeycomb, spiced fig preserve, walnut sourdough.", badge: null },
+    { name: "Soufflé du Jour",             price: "$20",      desc: "Pastry chef's daily rising soufflé served with warm spiced ginger crème anglaise.", badge: "Chef Pick" },
   ],
   Cocktails: [
-    { name: "Bricks Noir",               price: "$22",      desc: "Aged rum, cold-brew coffee, activated charcoal, vanilla, dark cacao bitters.",                  badge: "Signature" },
-    { name: "24K Gold Rush",             price: "$28",      desc: "Rémy Martin XO, edible 24K gold flakes, honey shrub, fresh lemon, Champagne float.",            badge: "VIP Exclusive" },
-    { name: "Midnight Garden",           price: "$19",      desc: "Hendrick's gin, elderflower, cucumber, fresh basil, lime, tonic water.",                        badge: null },
-    { name: "Zero-Proof Bloom",          price: "$14",      desc: "Seedlip Spice, jasmine syrup, pink grapefruit, rosemary, sparkling water. (N/A)",               badge: "N/A" },
-    { name: "Old Fashioned",             price: "$24",      desc: "Buffalo Trace bourbon, house-made demerara syrup, Angostura bitters, expressed orange peel.",   badge: null },
-    { name: "The Socialite",             price: "$26",      desc: "Grey Goose vodka, St-Germain, lychee purée, lime, Champagne, edible shimmer.",                  badge: null },
+    { name: "Addis Nights Old Fashioned",  price: "$24",      desc: "Small-batch bourbon, house-spiced date reduction, Ethiopian coffee bitters, expressed orange peel.", badge: "Signature" },
+    { name: "The Queen of Sheba",          price: "$28",      desc: "Grey Goose vodka, artisanal Tej honey wine, passion fruit liqueur, fresh lime, Champagne float, 24K edible gold.", badge: "VIP Exclusive" },
+    { name: "Highland Botanist",           price: "$22",      desc: "Hendrick's gin, elderflower liqueur, fresh cucumber, crushed rosemary, fever-tree tonic, korarima aroma mist.", badge: null },
+    { name: "Smoked Berbere Margarita",    price: "$24",      desc: "Clase Azul reposado, artisanal mezcal mist, cold-pressed lime juice, organic blue agave, mild berbere smoked rim.", badge: "Must Try" },
+    { name: "Zero-Proof Queen",            price: "$16",      desc: "Seedlip Spice, hibiscus flower infusion, cold-pressed lime, sparkling water, crushed mint sprig. (N/A)", badge: "N/A" },
   ],
   Wine: [
-    { name: "Blanc de Blancs — Krug",        price: "$420 / btl", desc: "Champagne, France. Ethereal bubbles, brioche, white peach, toasted hazelnut. Prestige cuvée.", badge: "Prestige" },
-    { name: "Chardonnay — Aubert CIX",       price: "$180 / btl", desc: "Sonoma Coast, California. Creamy texture, Meyer lemon, subtle oak, remarkable length.",        badge: null },
-    { name: "Pinot Noir — Screaming Eagle",  price: "$260 / btl", desc: "Napa Valley, California. Silky tannins, dark cherry, violets, cassis. Cult Napa icon.",         badge: "Signature" },
-    { name: "Malbec — Achaval Ferrer",       price: "$95 / btl",  desc: "Mendoza, Argentina. Plush blueberry, mocha, smooth finish. Outstanding value.",                  badge: null },
-    { name: "Sancerre — H. Bourgeois",       price: "$88 / btl",  desc: "Loire Valley, France. Crisp Sauvignon Blanc, gooseberry, flint, zesty citrus.",                 badge: null },
+    { name: "Blanc de Blancs — Krug",       price: "$420 / btl", desc: "Champagne, France. Ethereal bubbles, toasted brioche, white peach, roasted hazelnut finish.", badge: "Prestige" },
+    { name: "Chardonnay — Aubert CIX",      price: "$180 / btl", desc: "Sonoma Coast, California. Creamy texture, Meyer lemon curd, delicate French oak, remarkable length.", badge: null },
+    { name: "Pinot Noir — Screaming Eagle", price: "$260 / btl", desc: "Napa Valley, California. Silky tannins, dark cherry, dried violets, cassis. Cult icon.", badge: "Signature" },
+    { name: "Rift Valley Syrah Reserve",    price: "$120 / btl", desc: "Volcanic Rift Valley terroir, Ethiopia. Ripe dark blackberry, cracked black pepper, elegant oak.", badge: "Exclusive" },
+    { name: "Sancerre — H. Bourgeois",      price: "$88 / btl",  desc: "Loire Valley, France. Crisp Sauvignon Blanc, gooseberry, wet flint, refreshing citrus.", badge: null },
   ],
 };
 
 function badgeClass(badge) {
   if (!badge) return null;
-  if (badge === "Veg" || badge === "N/A") return "text-green-600 border border-green-600/30 bg-green-600/10";
-  return "text-bl-brick border border-bl-brick/30 bg-bl-brick/10";
+  if (badge === "Veg" || badge === "N/A") return "text-emerald-700 border border-emerald-600/30 bg-emerald-600/10";
+  return "text-[#8E6E28] border border-[#C5A059]/40 bg-[#E5C378]/15";
 }
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+const fadeUp = { hidden: { opacity: 0, y: 25 }, show: { opacity: 1, y: 0, transition: { duration: 0.45 } } };
+const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState("Starters");
 
   return (
-    <main className="bg-bl-brick-bg text-bl-cream min-h-screen">
+    <main className="bg-[#080A0E] text-[#FAF6EE] min-h-screen">
       <Helmet>
         <title>Culinary &amp; Cocktail Menu | Bricks Lounge Miami</title>
         <meta
           name="description"
-          content="Explore the exquisite dining and beverage offerings at Bricks Lounge Miami. Dry-aged steaks, fresh seafood, artisan desserts, prestige wines, and craft cocktails."
+          content="Explore the exquisite Ethiopian culinary heritage and world-class international gastronomy menu at Bricks Lounge Miami. Prime steaks, fresh seafood, and craft cocktails."
         />
         <meta
           name="keywords"
-          content="Bricks Lounge menu, Miami restaurant menu, dry aged steak Miami, craft cocktails Miami, fine dining menu"
+          content="Bricks Lounge menu, Ethiopian fine dining Miami, dry aged steak Miami, craft cocktails Miami, luxury dining"
         />
         <link rel="canonical" href="https://www.brickslounge.com/menu" />
         <meta property="og:title" content="Culinary &amp; Cocktail Menu | Bricks Lounge Miami" />
         <meta
           property="og:description"
-          content="Dry-aged steaks, fresh seafood, artisan desserts, and bespoke cocktails crafted with passion at Bricks Lounge."
+          content="Where time-honored Ethiopian culinary traditions meet world-class international gastronomy. Experience our chef-curated dining in Miami."
         />
         <meta property="og:url" content="https://www.brickslounge.com/menu" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.brickslounge.com/textures/brick.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Culinary &amp; Cocktail Menu | Bricks Lounge Miami" />
-        <meta
-          name="twitter:description"
-          content="Dry-aged steaks, fresh seafood, artisan desserts, and bespoke cocktails crafted with passion at Bricks Lounge."
-        />
-        <meta name="twitter:image" content="https://www.brickslounge.com/textures/brick.jpg" />
       </Helmet>
+
       {/* ─── HERO ─── */}
-      <div className="relative pt-32 pb-16 overflow-hidden border-b border-bl-brick/30">
-        <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/82 via-black/70 to-black/82" />
+      <div className="relative pt-36 pb-20 overflow-hidden border-b border-[#E5C378]/25"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.85)" }} />
         <div className="section-inner relative z-10 text-center">
-          <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="section-label mb-4">
-            The Menu
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }} className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-3xl mx-auto leading-tight">
-            What We&apos;re Serving
+          <motion.span initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+            className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-4 block">
+            The Culinary Experience
+          </motion.span>
+          <div className="w-16 h-0.5 bg-[#C5A059] mx-auto mb-6" />
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display text-4xl md:text-6xl font-bold tracking-wide mb-6 max-w-3xl mx-auto leading-tight text-[#FAF6EE]">
+            What We&apos;re <span className="font-script text-5xl md:text-7xl font-normal italic" style={{ color: "#E5C378", textShadow: "0 0 18px rgba(229,195,120,0.35)" }}>Serving</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.65, delay: 0.25 }} className="text-bl-muted text-lg max-w-xl mx-auto">
-            Seasonally inspired, meticulously crafted, and always worth the night out.
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.25 }}
+            className="font-sans text-sm md:text-base text-[#FAF6EE]/75 max-w-2xl mx-auto leading-relaxed font-normal">
+            Time-honored Ethiopian culinary traditions harmonized with refined international gastronomy. Artfully spiced, meticulously plated, and crafted for an unforgettable evening.
           </motion.p>
         </div>
       </div>
 
       {/* ─── MENU SECTION ─── */}
-      <section className="relative py-20">
-        <div className="absolute inset-0" style={{ backgroundImage: "url('/textures/wood.jpg')", backgroundSize: "cover" }} />
-        <div className="absolute inset-0 bg-black/80" />
+      <section className="relative py-20"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.88)" }} />
         <div className="section-inner relative z-10">
           {/* Tabs */}
-          <div className="flex flex-wrap gap-2 justify-center mb-14">
+          <div className="flex flex-wrap gap-3 justify-center mb-14">
             {tabs.map(tab => (
-              <button key={tab} onClick={() => setActiveTab(tab)} className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${activeTab === tab ? "bg-bl-brick text-white shadow-lg shadow-bl-brick/30" : "text-bl-muted hover:text-bl-cream bg-bl-card border border-bl-brick/20"}`}>
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`font-sans text-xs tracking-widest uppercase font-semibold px-7 py-3 rounded-sm transition-all duration-300 ${
+                  activeTab === tab
+                    ? "text-[#1a0505] shadow-lg shadow-[#E5C378]/25"
+                    : "text-[#FAF6EE]/75 hover:text-[#FAF6EE] bg-black/40 border border-[#E5C378]/30 hover:border-[#E5C378]/60"
+                }`}
+                style={activeTab === tab ? {
+                  background: "linear-gradient(135deg, #ECC880 0%, #C59B4E 100%)",
+                  border: "1.5px solid #E5C378"
+                } : {}}>
                 {tab}
               </button>
             ))}
@@ -122,24 +130,40 @@ export default function MenuPage() {
           {/* Menu items */}
           <AnimatePresence mode="wait">
             <motion.div key={activeTab} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.35 }}>
-              <motion.div initial="hidden" animate="show" variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <motion.div initial="hidden" animate="show" variants={stagger} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {menuData[activeTab].map((item) => (
-                  <motion.div key={item.name} variants={fadeUp} className="bg-black/60 p-7 rounded-xl border border-bl-brick/15 hover:bg-black/80 transition-colors group">
+                  <motion.div
+                    key={item.name}
+                    variants={fadeUp}
+                    className="p-7 rounded-sm transition-all duration-300 group hover:-translate-y-0.5 shadow-xl"
+                    style={{
+                      backgroundImage: "url('/textures/cream-plaster.png')",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      border: "1.5px solid rgba(229,195,120,0.60)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.35), 0 0 15px rgba(229,195,120,0.12)"
+                    }}>
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div className="flex items-start gap-3 flex-1">
-                        <Star className="text-bl-brick mt-0.5 flex-shrink-0 opacity-50 group-hover:opacity-100 transition-opacity" size={14} />
-                        <h3 className="font-semibold text-bl-cream leading-snug">{item.name}</h3>
+                        <Star className="text-[#8E6E28] mt-1 flex-shrink-0 opacity-80 group-hover:scale-110 transition-transform" size={15} fill="#8E6E28" />
+                        <h3 className="font-display font-bold text-lg text-[#1a0505] leading-snug">
+                          {item.name}
+                        </h3>
                       </div>
                       <div className="flex items-center gap-2 flex-shrink-0">
                         {item.badge && (
-                          <span className={`text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full ${badgeClass(item.badge)}`}>
+                          <span className={`text-[10px] font-sans font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full ${badgeClass(item.badge)}`}>
                             {item.badge}
                           </span>
                         )}
-                        <span className="text-bl-brick font-bold whitespace-nowrap">{item.price}</span>
+                        <span className="font-serif font-bold text-[#8E6E28] text-lg whitespace-nowrap">
+                          {item.price}
+                        </span>
                       </div>
                     </div>
-                    <p className="text-bl-muted text-sm leading-relaxed pl-5">{item.desc}</p>
+                    <p className="font-sans text-xs md:text-sm leading-relaxed pl-7 text-[#4A3B34] font-medium">
+                      {item.desc}
+                    </p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -149,13 +173,22 @@ export default function MenuPage() {
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="py-20 bg-bl-brick-bg">
-        <div className="section-inner text-center">
+      <section className="relative py-20 border-t border-[#E5C378]/25"
+        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}>
+        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.92)" }} />
+        <div className="section-inner text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <p className="section-label mb-4">Reserve Your Table</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Dine?</h2>
-            <p className="text-bl-muted max-w-md mx-auto mb-10">Tables fill quickly — especially on weekends. Book ahead and let us take care of the rest.</p>
-            <Link to="/reservations" className="btn-brick inline-flex items-center gap-2">
+            <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block">
+              Reserve Your Table
+            </span>
+            <div className="w-12 h-0.5 bg-[#C5A059] mx-auto mb-5" />
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-[#FAF6EE]">
+              Ready to <span className="font-script text-4xl md:text-6xl font-normal italic" style={{ color: "#E5C378" }}>Dine?</span>
+            </h2>
+            <p className="font-sans text-sm md:text-base text-[#FAF6EE]/75 max-w-md mx-auto mb-8 font-medium">
+              Tables fill quickly for dinner service and late-night lounge seating. Reserve ahead and let our team curate your evening.
+            </p>
+            <Link to="/reservations" className="btn-brick inline-flex items-center gap-2.5">
               <CalendarCheck size={18} /> Reserve a Table
             </Link>
           </motion.div>
