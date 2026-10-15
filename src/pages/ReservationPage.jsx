@@ -15,9 +15,9 @@ function Toast({ msg }) {
   );
 }
 
-const inputStyle = "w-full bg-white/85 border border-[#C5A059]/50 text-[#1a0505] placeholder:text-[#8E6E28]/60 font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#C5A059] focus:bg-white transition-colors rounded-sm";
-const lblStyle   = "block text-xs tracking-widest text-[#4A3B34] uppercase font-sans font-semibold mb-2";
-const errStyle   = "text-amber-800 text-xs mt-1 font-sans font-medium";
+const inputStyle = "w-full bg-[#141C1E] border border-[#C5A059]/50 text-[#FAF6EE] placeholder:text-[#FAF6EE]/40 font-sans text-sm px-4 py-3 focus:outline-none focus:border-[#E5C378] focus:bg-[#182224] transition-colors rounded-sm";
+const lblStyle   = "block text-xs tracking-widest text-[#E5C378] uppercase font-sans font-semibold mb-2";
+const errStyle   = "text-amber-400 text-xs mt-1 font-sans font-medium";
 
 function DiningForm() {
   const [sent, setSent] = useState(false);
@@ -227,21 +227,19 @@ export default function ReservationPage() {
               transition={{ duration: 0.35 }}
               className="p-8 md:p-12 rounded-sm relative overflow-hidden shadow-2xl"
               style={{
-                backgroundImage: "url('/textures/cream-plaster.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                border: "1.5px solid rgba(229,195,120,0.65)",
-                boxShadow: "0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(229,195,120,0.15)"
+                backgroundColor: "#172022",
+                border: "1.5px solid rgba(229,195,120,0.55)",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(229,195,120,0.12)"
               }}>
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-xs tracking-widest text-[#8E6E28] uppercase font-sans font-semibold">
+                <span className="text-xs tracking-widest text-[#E5C378] uppercase font-sans font-semibold">
                   {activeTab === "dining" ? "Fine Dining Service" : "VIP Lounge & Nightlife"}
                 </span>
               </div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-[#1a0505] mb-2 tracking-wide">
+              <h2 className="font-display font-bold text-2xl md:text-3xl text-[#FAF6EE] mb-2 tracking-wide">
                 {activeTab === "dining" ? "Reserve a Dining Table" : "Request Private VIP Booth"}
               </h2>
-              <p className="font-sans text-xs md:text-sm text-[#4A3B34] mb-8 pb-6 border-b border-[#C5A059]/30 font-medium leading-relaxed">
+              <p className="font-sans text-xs md:text-sm text-[#FAF6EE]/75 mb-8 pb-6 border-b border-[#C5A059]/30 font-normal leading-relaxed">
                 {activeTab === "dining"
                   ? "Dinner service available Tuesday through Sunday from 5:00 PM to 10:00 PM."
                   : "Elevated booths with dedicated bottle service and prime live DJ sightlines — Fri & Sat, 10 PM till late."}
@@ -256,22 +254,20 @@ export default function ReservationPage() {
               <div key={title}
                 className="p-5 rounded-sm flex gap-4 transition-all duration-300 shadow-lg"
                 style={{
-                  backgroundImage: "url('/textures/cream-plaster.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  border: "1.5px solid rgba(229,195,120,0.55)"
+                  backgroundColor: "#172022",
+                  border: "1.5px solid rgba(229,195,120,0.50)"
                 }}>
                 <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{
                     border: "1.5px solid #C5A059",
-                    background: "rgba(197,160,89,0.20)",
-                    color: "#8E6E28"
+                    background: "rgba(197,160,89,0.18)",
+                    color: "#E5C378"
                   }}>
                   <Icon size={18} />
                 </div>
                 <div>
-                  <h5 className="font-display font-bold text-sm text-[#1a0505] mb-1">{title}</h5>
-                  <p className="font-sans text-xs text-[#4A3B34] leading-relaxed font-medium">{body}</p>
+                  <h5 className="font-display font-bold text-sm text-[#FAF6EE] mb-1">{title}</h5>
+                  <p className="font-sans text-xs text-[#FAF6EE]/75 leading-relaxed font-normal">{body}</p>
                 </div>
               </div>
             ))}

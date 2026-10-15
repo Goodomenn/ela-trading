@@ -37,17 +37,19 @@
   .section-brick > .section-inner,
   .section-brick > .z-rel { position: relative; z-index: 1; }
 
-  /* ── Plaster / white-brush section ── */
+  /* ── Plaster / Slate section (Replaces white section with #1E2729) ── */
   .section-plaster {
     position: relative;
+    background-color: #1E2729;
     background-image: url('/textures/plaster.png');
     background-size: cover;
     background-position: center;
+    background-blend-mode: multiply;
   }
   .section-plaster-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(245, 240, 232, 0.90);
+    background: rgba(30, 39, 41, 0.94);
   }
 
   /* ── Wood section (dark) ── */
@@ -104,7 +106,7 @@
     @apply tracking-widest uppercase text-xs;
     @apply px-8 py-4 transition-all duration-200;
     border: 1.5px solid #C5A059;
-    color: #8E6E28;
+    color: #E5C378;
   }
   .btn-ghost-dark:hover { background: #C5A059; color: #1a0505; }
 
@@ -114,7 +116,7 @@
 
   /* ── Labels & Headings ── */
   .section-label-dark {
-    @apply text-xs tracking-[0.35em] uppercase font-sans text-[#8E6E28] font-semibold mb-3 block;
+    @apply text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block;
   }
   .section-label-light {
     @apply text-xs tracking-[0.35em] uppercase font-sans mb-3 block;
@@ -130,26 +132,28 @@
     margin-bottom: 1.5rem;
   }
 
-  /* ── Cards on plaster ── */
+  /* ── Cards on Slate #1E2729 ── */
   .card-on-plaster {
-    background: rgba(255,255,255,0.85);
+    background: #172022;
     border: 1.5px solid rgba(229,195,120,0.50);
     backdrop-filter: blur(6px);
+    color: #FAF6EE;
   }
   .card-on-plaster:hover {
-    background: rgba(255,255,255,0.98);
-    border-color: rgba(197,160,89,0.85);
+    background: #1E2729;
+    border-color: rgba(229,195,120,0.80);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45), 0 0 16px rgba(229,195,120,0.15);
   }
 
   /* ── Cards on brick ── */
   .card-on-brick {
-    background: rgba(12,14,18,0.70);
-    border: 1.5px solid rgba(229,195,120,0.30);
+    background: #172022;
+    border: 1.5px solid rgba(229,195,120,0.40);
     backdrop-filter: blur(8px);
   }
   .card-on-brick:hover {
-    border-color: rgba(229,195,120,0.70);
-    background: rgba(18,22,28,0.85);
+    border-color: rgba(229,195,120,0.75);
+    background: #1E2729;
     box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 20px rgba(229,195,120,0.20);
   }
 }

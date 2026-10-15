@@ -17,27 +17,33 @@ export default {
         "bl-brick-light": "#E5C378",
         "bl-brick-bg":    "#080A0E",
 
+        // User Signature Slate (Replaces white sections & cards across all pages)
+        "bl-slate":       "#1E2729",
+        "bl-slate-dark":  "#141C1E",
+        "bl-slate-card":  "#172022",
+        "bl-slate-light": "#253133",
+
         // Wood & Stone browns
         "bl-wood":        "#15181E",
         "bl-wood-mid":    "#242A35",
         "bl-wood-light":  "#3B4454",
         "bl-wood-warm":   "#2C2218",
 
-        // Plaster whites & creams
-        "bl-plaster":     "#F0ECE6",
-        "bl-plaster-mid": "#D8D2C8",
-        "bl-plaster-dark":"#B8B0A6",
+        // Plaster & Slate surfaces
+        "bl-plaster":     "#1E2729",
+        "bl-plaster-mid": "#172022",
+        "bl-plaster-dark":"#141C1E",
 
         // Text
-        "bl-cream":       "#F7F2E7",
+        "bl-cream":       "#FAF6EE",
         "bl-offwhite":    "#EDE8E0",
         "bl-muted":       "#A8A09A",
         "bl-dimmed":      "#736C65",
 
-        // Cards / surfaces (luxury obsidian & bronze borders)
-        "bl-surface":     "#0F1217",
-        "bl-card":        "#13171F",
-        "bl-elevated":    "#1A202C",
+        // Cards / surfaces (luxury slate obsidian & bronze borders)
+        "bl-surface":     "#141C1E",
+        "bl-card":        "#172022",
+        "bl-elevated":    "#1E2729",
         "bl-border":      "rgba(229,195,120,0.30)",
         "bl-border-wood": "rgba(197,160,89,0.35)",
         "bl-border-light":"rgba(229,195,120,0.45)",

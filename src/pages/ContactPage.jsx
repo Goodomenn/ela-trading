@@ -103,29 +103,27 @@ export default function ContactPage() {
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}
               className="p-8 md:p-10 rounded-sm shadow-2xl flex flex-col justify-between"
               style={{
-                backgroundImage: "url('/textures/cream-plaster.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                border: "1.5px solid rgba(229,195,120,0.65)",
-                boxShadow: "0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(229,195,120,0.15)"
+                backgroundColor: "#172022",
+                border: "1.5px solid rgba(229,195,120,0.55)",
+                boxShadow: "0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(229,195,120,0.12)"
               }}>
               <div>
-                <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#8E6E28] font-semibold mb-2 block">
+                <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-2 block">
                   Find Us in Miami
                 </span>
-                <h2 className="font-display font-bold text-2xl md:text-3xl text-[#1a0505] mb-8 tracking-wide">
+                <h2 className="font-display font-bold text-2xl md:text-3xl text-[#FAF6EE] mb-8 tracking-wide">
                   Direct Contact &amp; Hours
                 </h2>
 
                 <div className="space-y-6">
                   <div className="flex gap-4">
                     <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.20)", color: "#8E6E28" }}>
+                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.18)", color: "#E5C378" }}>
                       <MapPin size={20} />
                     </div>
                     <div>
-                      <p className="font-display font-bold text-[#1a0505] text-base mb-1">Location</p>
-                      <p className="text-[#4A3B34] text-xs md:text-sm font-medium leading-relaxed">
+                      <p className="font-display font-bold text-[#FAF6EE] text-base mb-1">Location</p>
+                      <p className="text-[#FAF6EE]/75 text-xs md:text-sm font-normal leading-relaxed">
                         14 Velvet Boulevard<br />Miami, FL 33101 (Valet Parking Available)
                       </p>
                     </div>
@@ -133,12 +131,12 @@ export default function ContactPage() {
 
                   <div className="flex gap-4">
                     <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.20)", color: "#8E6E28" }}>
+                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.18)", color: "#E5C378" }}>
                       <Phone size={20} />
                     </div>
                     <div>
-                      <p className="font-display font-bold text-[#1a0505] text-base mb-1">Direct Phone</p>
-                      <a href="tel:+15552048800" className="text-[#8E6E28] hover:text-[#C5A059] font-sans text-sm font-semibold transition-colors">
+                      <p className="font-display font-bold text-[#FAF6EE] text-base mb-1">Direct Phone</p>
+                      <a href="tel:+15552048800" className="text-[#E5C378] hover:text-[#FAF6EE] font-sans text-sm font-semibold transition-colors">
                         +1 (555) 204-8800
                       </a>
                     </div>
@@ -146,30 +144,30 @@ export default function ContactPage() {
 
                   <div className="flex gap-4">
                     <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.20)", color: "#8E6E28" }}>
+                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.18)", color: "#E5C378" }}>
                       <Mail size={20} />
                     </div>
                     <div>
-                      <p className="font-display font-bold text-[#1a0505] text-base mb-1">Email Inquiries</p>
+                      <p className="font-display font-bold text-[#FAF6EE] text-base mb-1">Email Inquiries</p>
                       <div className="space-y-1 font-sans text-xs md:text-sm">
-                        <p className="text-[#4A3B34] font-medium"><strong className="text-[#1a0505]">Dining:</strong> reservations@brickslounge.com</p>
-                        <p className="text-[#4A3B34] font-medium"><strong className="text-[#1a0505]">VIP Booths:</strong> vip@brickslounge.com</p>
+                        <p className="text-[#FAF6EE]/75 font-normal"><strong className="text-[#FAF6EE]">Dining:</strong> reservations@brickslounge.com</p>
+                        <p className="text-[#FAF6EE]/75 font-normal"><strong className="text-[#FAF6EE]">VIP Booths:</strong> vip@brickslounge.com</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="flex gap-4">
                     <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.20)", color: "#8E6E28" }}>
+                      style={{ border: "1.5px solid #C5A059", background: "rgba(197,160,89,0.18)", color: "#E5C378" }}>
                       <Clock size={20} />
                     </div>
                     <div>
-                      <p className="font-display font-bold text-[#1a0505] text-base mb-1">Operating Hours</p>
-                      <div className="space-y-1 font-sans text-xs md:text-sm text-[#4A3B34] font-medium">
-                        <p><strong className="text-[#1a0505]">Tue – Thu:</strong> 5:00 PM – 1:00 AM</p>
-                        <p><strong className="text-[#1a0505]">Fri – Sat:</strong> 5:00 PM – 3:00 AM (VIP Lounge from 10 PM)</p>
-                        <p><strong className="text-[#1a0505]">Sunday:</strong> 5:00 PM – Midnight</p>
-                        <p><strong className="text-[#1a0505]">Monday:</strong> Closed for private events</p>
+                      <p className="font-display font-bold text-[#FAF6EE] text-base mb-1">Operating Hours</p>
+                      <div className="space-y-1 font-sans text-xs md:text-sm text-[#FAF6EE]/75 font-normal">
+                        <p><strong className="text-[#FAF6EE]">Tue – Thu:</strong> 5:00 PM – 1:00 AM</p>
+                        <p><strong className="text-[#FAF6EE]">Fri – Sat:</strong> 5:00 PM – 3:00 AM (VIP Lounge from 10 PM)</p>
+                        <p><strong className="text-[#FAF6EE]">Sunday:</strong> 5:00 PM – Midnight</p>
+                        <p><strong className="text-[#FAF6EE]">Monday:</strong> Closed for private events</p>
                       </div>
                     </div>
                   </div>
@@ -181,55 +179,53 @@ export default function ContactPage() {
             <motion.div initial={{ opacity: 0, x: 25 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="p-8 md:p-10 rounded-sm shadow-2xl relative overflow-hidden"
                 style={{
-                  backgroundImage: "url('/textures/cream-plaster.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  border: "1.5px solid rgba(229,195,120,0.65)",
-                  boxShadow: "0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(229,195,120,0.15)"
+                  backgroundColor: "#172022",
+                  border: "1.5px solid rgba(229,195,120,0.55)",
+                  boxShadow: "0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(229,195,120,0.12)"
                 }}>
-                <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#8E6E28] font-semibold mb-2 block">
+                <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-2 block">
                   Get in Touch
                 </span>
-                <h2 className="font-display font-bold text-2xl md:text-3xl text-[#1a0505] mb-6 tracking-wide">
+                <h2 className="font-display font-bold text-2xl md:text-3xl text-[#FAF6EE] mb-6 tracking-wide">
                   Send a Message
                 </h2>
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="flex flex-col items-center justify-center py-16 text-center">
-                      <CheckCircle className="text-[#8E6E28] mb-4" size={52} />
-                      <h3 className="font-display font-bold text-xl text-[#1a0505] mb-2">Message Received</h3>
-                      <p className="font-sans text-xs md:text-sm text-[#4A3B34] max-w-xs font-medium">Thank you for reaching out. Our concierge will respond to you within 24 hours.</p>
+                      <CheckCircle className="text-[#E5C378] mb-4" size={52} />
+                      <h3 className="font-display font-bold text-xl text-[#FAF6EE] mb-2">Message Received</h3>
+                      <p className="font-sans text-xs md:text-sm text-[#FAF6EE]/75 max-w-xs font-normal">Thank you for reaching out. Our concierge will respond to you within 24 hours.</p>
                     </motion.div>
                   ) : (
                     <motion.form key="form" onSubmit={handleSubmit(onSubmit)} className="space-y-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-sans uppercase tracking-widest text-[#4A3B34] font-semibold mb-1.5">Full Name</label>
+                          <label className="block text-xs font-sans uppercase tracking-widest text-[#E5C378] font-semibold mb-1.5">Full Name</label>
                           <input {...register("name", { required: "Name is required" })} placeholder="Your full name"
-                            className="w-full bg-white/85 border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#1a0505] placeholder:text-[#8E6E28]/60 focus:outline-none focus:border-[#C5A059] focus:bg-white transition-colors" />
-                          {errors.name && <p className="text-amber-800 text-xs mt-1 font-sans">{errors.name.message}</p>}
+                            className="w-full bg-[#141C1E] border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#FAF6EE] placeholder:text-[#FAF6EE]/40 focus:outline-none focus:border-[#E5C378] focus:bg-[#182224] transition-colors" />
+                          {errors.name && <p className="text-amber-400 text-xs mt-1 font-sans">{errors.name.message}</p>}
                         </div>
                         <div>
-                          <label className="block text-xs font-sans uppercase tracking-widest text-[#4A3B34] font-semibold mb-1.5">Email Address</label>
+                          <label className="block text-xs font-sans uppercase tracking-widest text-[#E5C378] font-semibold mb-1.5">Email Address</label>
                           <input {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })} placeholder="you@example.com"
-                            className="w-full bg-white/85 border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#1a0505] placeholder:text-[#8E6E28]/60 focus:outline-none focus:border-[#C5A059] focus:bg-white transition-colors" />
-                          {errors.email && <p className="text-amber-800 text-xs mt-1 font-sans">{errors.email.message}</p>}
+                            className="w-full bg-[#141C1E] border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#FAF6EE] placeholder:text-[#FAF6EE]/40 focus:outline-none focus:border-[#E5C378] focus:bg-[#182224] transition-colors" />
+                          {errors.email && <p className="text-amber-400 text-xs mt-1 font-sans">{errors.email.message}</p>}
                         </div>
                       </div>
                       <div>
-                        <label className="block text-xs font-sans uppercase tracking-widest text-[#4A3B34] font-semibold mb-1.5">Inquiry Subject</label>
+                        <label className="block text-xs font-sans uppercase tracking-widest text-[#E5C378] font-semibold mb-1.5">Inquiry Subject</label>
                         <select {...register("subject", { required: true })}
-                          className="w-full bg-white/85 border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#1a0505] focus:outline-none focus:border-[#C5A059] transition-colors">
+                          className="w-full bg-[#141C1E] border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#FAF6EE] focus:outline-none focus:border-[#E5C378] transition-colors">
                           <option value="">Select subject…</option>
                           {subjectOptions.map(s => <option key={s} value={s}>{s}</option>)}
                         </select>
-                        {errors.subject && <p className="text-amber-800 text-xs mt-1 font-sans">Please select a subject</p>}
+                        {errors.subject && <p className="text-amber-400 text-xs mt-1 font-sans">Please select a subject</p>}
                       </div>
                       <div>
-                        <label className="block text-xs font-sans uppercase tracking-widest text-[#4A3B34] font-semibold mb-1.5">Your Message</label>
+                        <label className="block text-xs font-sans uppercase tracking-widest text-[#E5C378] font-semibold mb-1.5">Your Message</label>
                         <textarea {...register("message", { required: "Message is required", minLength: { value: 15, message: "Please provide a little more detail" } })} rows={4} placeholder="How can our concierge assist you?"
-                          className="w-full bg-white/85 border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#1a0505] placeholder:text-[#8E6E28]/60 focus:outline-none focus:border-[#C5A059] focus:bg-white transition-colors resize-none" />
-                        {errors.message && <p className="text-amber-800 text-xs mt-1 font-sans">{errors.message.message}</p>}
+                          className="w-full bg-[#141C1E] border border-[#C5A059]/50 rounded-sm px-4 py-3 text-xs md:text-sm text-[#FAF6EE] placeholder:text-[#FAF6EE]/40 focus:outline-none focus:border-[#E5C378] focus:bg-[#182224] transition-colors resize-none" />
+                        {errors.message && <p className="text-amber-400 text-xs mt-1 font-sans">{errors.message.message}</p>}
                       </div>
                       <button type="submit" className="btn-brick w-full flex items-center justify-center gap-2 py-3.5 text-xs font-semibold">
                         <Send size={15} /> Send Message

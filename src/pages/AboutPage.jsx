@@ -95,25 +95,23 @@ export default function AboutPage() {
                 viewport={{ once: true }} transition={{ duration: 0.4 }}
                 className="p-7 rounded-sm transition-all duration-300 group hover:-translate-y-1 shadow-2xl flex flex-col justify-between"
                 style={{
-                  backgroundImage: "url('/textures/cream-plaster.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  border: "1.5px solid rgba(229,195,120,0.60)",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.4), 0 0 15px rgba(229,195,120,0.12)"
+                  backgroundColor: "#172022",
+                  border: "1.5px solid rgba(229,195,120,0.50)",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.45), 0 0 15px rgba(229,195,120,0.10)"
                 }}>
                 <div>
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5 transition-transform group-hover:scale-110"
                     style={{
                       border: "1.5px solid #C5A059",
-                      background: "rgba(197,160,89,0.22)",
-                      color: "#8E6E28"
+                      background: "rgba(197,160,89,0.18)",
+                      color: "#E5C378"
                     }}>
                     <Icon size={22} />
                   </div>
-                  <h3 className="font-display font-bold text-lg mb-3 tracking-wide text-[#1a0505]">
+                  <h3 className="font-display font-bold text-lg mb-3 tracking-wide text-[#FAF6EE]">
                     {title}
                   </h3>
-                  <p className="font-sans text-xs md:text-sm leading-relaxed text-[#4A3B34] font-medium">
+                  <p className="font-sans text-xs md:text-sm leading-relaxed text-[#FAF6EE]/75 font-normal">
                     {desc}
                   </p>
                 </div>
@@ -148,14 +146,12 @@ export default function AboutPage() {
                   </div>
                   <div className="p-6 rounded-sm flex-1 transition-all duration-300 shadow-xl"
                     style={{
-                      backgroundImage: "url('/textures/cream-plaster.png')",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      border: "1.5px solid rgba(229,195,120,0.60)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.35)"
+                      backgroundColor: "#172022",
+                      border: "1.5px solid rgba(229,195,120,0.50)",
+                      boxShadow: "0 8px 25px rgba(0,0,0,0.40)"
                     }}>
-                    <h3 className="font-display font-bold text-lg text-[#1a0505] mb-2">{title}</h3>
-                    <p className="font-sans text-xs md:text-sm text-[#4A3B34] leading-relaxed font-medium">{desc}</p>
+                    <h3 className="font-display font-bold text-lg text-[#FAF6EE] mb-2">{title}</h3>
+                    <p className="font-sans text-xs md:text-sm text-[#FAF6EE]/75 leading-relaxed font-normal">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -184,22 +180,20 @@ export default function AboutPage() {
               <div key={name}
                 className="p-7 text-center rounded-sm transition-all duration-300 shadow-xl hover:-translate-y-1"
                 style={{
-                  backgroundImage: "url('/textures/cream-plaster.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  border: "1.5px solid rgba(229,195,120,0.60)",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.35)"
+                  backgroundColor: "#172022",
+                  border: "1.5px solid rgba(229,195,120,0.50)",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.40)"
                 }}>
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-display font-bold text-xl text-[#8E6E28]"
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-display font-bold text-xl text-[#E5C378]"
                   style={{
                     border: "1.5px solid #C5A059",
-                    background: "rgba(197,160,89,0.22)"
+                    background: "rgba(197,160,89,0.18)"
                   }}>
                   {name.charAt(0)}
                 </div>
-                <h3 className="font-display font-bold text-lg text-[#1a0505] mb-1">{name}</h3>
-                <p className="text-[#8E6E28] font-sans text-xs font-semibold uppercase tracking-wider mb-3">{role}</p>
-                <p className="font-sans text-xs text-[#4A3B34] leading-relaxed font-medium">{bio}</p>
+                <h3 className="font-display font-bold text-lg text-[#FAF6EE] mb-1">{name}</h3>
+                <p className="text-[#E5C378] font-sans text-xs font-semibold uppercase tracking-wider mb-3">{role}</p>
+                <p className="font-sans text-xs text-[#FAF6EE]/75 leading-relaxed font-normal">{bio}</p>
               </div>
             ))}
           </div>

@@ -137,16 +137,14 @@ export default function MenuPage() {
                     variants={fadeUp}
                     className="p-7 rounded-sm transition-all duration-300 group hover:-translate-y-0.5 shadow-xl"
                     style={{
-                      backgroundImage: "url('/textures/cream-plaster.png')",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      border: "1.5px solid rgba(229,195,120,0.60)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.35), 0 0 15px rgba(229,195,120,0.12)"
+                      backgroundColor: "#172022",
+                      border: "1.5px solid rgba(229,195,120,0.50)",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.45), 0 0 15px rgba(229,195,120,0.10)"
                     }}>
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div className="flex items-start gap-3 flex-1">
-                        <Star className="text-[#8E6E28] mt-1 flex-shrink-0 opacity-80 group-hover:scale-110 transition-transform" size={15} fill="#8E6E28" />
-                        <h3 className="font-display font-bold text-lg text-[#1a0505] leading-snug">
+                        <Star className="text-[#E5C378] mt-1 flex-shrink-0 opacity-90 group-hover:scale-110 transition-transform" size={15} fill="#E5C378" />
+                        <h3 className="font-display font-bold text-lg text-[#FAF6EE] leading-snug">
                           {item.name}
                         </h3>
                       </div>
@@ -156,12 +154,12 @@ export default function MenuPage() {
                             {item.badge}
                           </span>
                         )}
-                        <span className="font-serif font-bold text-[#8E6E28] text-lg whitespace-nowrap">
+                        <span className="font-serif font-bold text-[#E5C378] text-lg whitespace-nowrap">
                           {item.price}
                         </span>
                       </div>
                     </div>
-                    <p className="font-sans text-xs md:text-sm leading-relaxed pl-7 text-[#4A3B34] font-medium">
+                    <p className="font-sans text-xs md:text-sm leading-relaxed pl-7 text-[#FAF6EE]/75 font-normal">
                       {item.desc}
                     </p>
                   </motion.div>

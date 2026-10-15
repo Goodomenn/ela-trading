@@ -11,8 +11,8 @@ const events = [
 export default function EventsSection() {
   return (
     <section id="events" className="relative py-24"
-      style={{backgroundImage:"url('/textures/plaster.png')", backgroundSize:"cover"}}>
-      <div className="absolute inset-0" style={{background:"rgba(245,240,232,0.88)"}}/>
+      style={{backgroundColor: "#1E2729", backgroundImage:"url('/textures/plaster.png')", backgroundBlendMode: "multiply", backgroundSize:"cover"}}>
+      <div className="absolute inset-0" style={{background:"rgba(30, 39, 41, 0.94)"}}/>
       <div className="relative z-10 section-inner">
         <div className="mb-14">
           <span className="section-label-dark">Upcoming Events</span>
