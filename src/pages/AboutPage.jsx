@@ -10,13 +10,6 @@ const values = [
   { icon: Sparkles, title: "After-Dark Energy",    desc: "Seamlessly transitioning from relaxed gourmet dining into Miami's most sought-after late-night lounge with world-class live DJs." },
 ];
 
-const timeline = [
-  { year: "2018", title: "The Vision Takes Root",       desc: "Founded with the ambition to bring authentic Ethiopian spices and international fine dining to Miami's vibrant culinary scene." },
-  { year: "2020", title: "Culinary Distinction",        desc: "Celebrated by regional critics for redefining modern ethnic fusion and bringing artisanal niter kibbeh and dry-aged cuts together." },
-  { year: "2022", title: "The Lounge & Live DJ Stage",  desc: "Expanded into an elevated after-dark sanctuary, introducing custom masonry VIP booths and world-class electronic DJ programming." },
-  { year: "2024", title: "Award of Excellence",         desc: "Recognized for our 400-bottle cellar, house Tej infusions, and Michelin-caliber tableside hospitality." },
-  { year: "2026", title: "Today",                       desc: "Still honoring tradition. Still evolving flavor. Miami's premier destination for dining and upscale nightlife." },
-];
 
 const team = [
   { name: "Executive Chef",      role: "Culinary Director",     bio: "Bringing decades of international mastery and deep reverence for Ethiopian spice architecture to every signature creation." },
@@ -121,44 +114,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── TIMELINE ─── */}
-      <section className="relative py-24 border-t border-[#E5C378]/20"
-        style={{ backgroundImage: "url('/textures/brick.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
-        <div className="absolute inset-0" style={{ background: "rgba(8,10,14,0.92)" }} />
-        <div className="section-inner relative z-10">
-          <div className="text-center mb-16">
-            <span className="text-xs tracking-[0.35em] uppercase font-sans text-[#E5C378] font-semibold mb-3 block">
-              Our Journey
-            </span>
-            <div className="w-12 h-0.5 bg-[#C5A059] mx-auto mb-5" />
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-wide text-[#FAF6EE]">
-              Milestones of <span className="font-script text-4xl md:text-6xl font-normal italic" style={{ color: "#E5C378" }}>Excellence</span>
-            </h2>
-          </div>
-
-          <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-[#C5A059]/40" />
-            <div className="space-y-8">
-              {timeline.map(({ year, title, desc }) => (
-                <div key={year} className="flex gap-8 pl-16 relative group">
-                  <div className="absolute left-0 top-1 w-12 h-12 rounded-full bg-[#080A0E] border-2 border-[#E5C378] flex items-center justify-center flex-shrink-0 z-10 shadow-lg shadow-black/80">
-                    <span className="font-display text-[#E5C378] text-xs font-bold leading-none">{year}</span>
-                  </div>
-                  <div className="p-6 rounded-sm flex-1 transition-all duration-300 shadow-xl"
-                    style={{
-                      backgroundColor: "#172022",
-                      border: "1.5px solid rgba(229,195,120,0.50)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.40)"
-                    }}>
-                    <h3 className="font-display font-bold text-lg text-[#FAF6EE] mb-2">{title}</h3>
-                    <p className="font-sans text-xs md:text-sm text-[#FAF6EE]/75 leading-relaxed font-normal">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ─── TEAM ─── */}
       <section className="relative py-24 border-t border-[#E5C378]/20"
